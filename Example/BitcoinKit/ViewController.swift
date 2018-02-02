@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import BitcoinKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let mnemonic = BTCMnemonic.init(withRepresentation: "guitar manage mercy mechanic begin lend like sad puzzle brown fly cash")
+        
+        NSLog("Generated mnemonic: %@", mnemonic.representation)
+        
+        let masterSeed = BTCMasterSeed.init(withMnemonic: mnemonic)
+        
+        NSLog("Generated master seed: %@", masterSeed.representation)
+        
+        let keychain = BTCKeychain.init(withMasterSeed: masterSeed)
+        
+        let wallet = keychain.getWallet(atIndex: 0)
+        
+        
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
-

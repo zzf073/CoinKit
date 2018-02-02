@@ -1,0 +1,19 @@
+PODS:
+  - Arcane (1.2.1)
+  - BitcoinKit (0.1.0):
+    - Arcane
+
+DEPENDENCIES:
+  - BitcoinKit (from `../`)
+
+EXTERNAL SOURCES:
+  BitcoinKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Arcane: 870689a8ba7145a7dec0c2d7d7836b50c9f12636
+  BitcoinKit: 3b0017cb89344f2c768fa83efbcf3137076a02c0
+
+PODFILE CHECKSUM: a6bd00773dffc40ae3b20e597f65257701494e42
+
+COCOAPODS: 1.4.0

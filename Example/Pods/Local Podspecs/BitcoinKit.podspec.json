@@ -1,0 +1,32 @@
+{
+  "name": "BitcoinKit",
+  "version": "0.1.0",
+  "summary": "A short description of BitcoinKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Dmitry/BitcoinKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dmitry": "d.overchuk@titanium.im"
+  },
+  "source": {
+    "git": "https://github.com/Dmitry/BitcoinKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BitcoinKit/Core/**/*",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "4"
+  },
+  "dependencies": {
+    "Arcane": [
+
+    ]
+  },
+  "frameworks": "AVFoundation",
+  "vendored_frameworks": "BitcoinKit/Frameworks/CoreBitcoin.framework"
+}
