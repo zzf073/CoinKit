@@ -9,6 +9,8 @@ import Foundation
 
 public protocol MasterSeed:Representable {
     
+    var data:Data{get}
+    
     init(withData data:Data)
     init(withMnemonic mnemonic:Mnemonic)
 }

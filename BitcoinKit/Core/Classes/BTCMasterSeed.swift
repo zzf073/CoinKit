@@ -10,7 +10,7 @@ import Arcane
 import CCommonCrypto
 
 public class BTCMasterSeed: MasterSeed {
-    private var data: Data
+    public var data: Data
     
     public var representation: String {
         return data.hexString
