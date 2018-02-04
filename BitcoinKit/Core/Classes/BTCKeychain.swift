@@ -27,7 +27,7 @@ public class BTCKeychain:Keychain {
         }
     }
     
-    public func getWallet(atIndex index: UInt) -> Wallet? {
+    public func derivedWallet(atIndex index: UInt) -> Wallet? {
         
         if let keychain = self.getBIP32Keychain() as? CoreBitcoin.BTCKeychain {
             

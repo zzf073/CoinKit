@@ -11,5 +11,5 @@ public protocol Keychain {
     
     init(withMasterSeed masterSeed:MasterSeed)
     
-    func getWallet(atIndex index:UInt) -> Wallet?
+    func derivedWallet(atIndex index:UInt) -> Wallet?
 }

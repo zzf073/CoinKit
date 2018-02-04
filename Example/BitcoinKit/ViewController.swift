@@ -14,23 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //"guitar manage mercy mechanic begin lend like sad puzzle brown fly cash"
-        
         let mnemonic = BTCMnemonic.createNewMnemonic()
-        
-        NSLog("Generated mnemonic: %@", mnemonic.representation)
-        
-        let masterSeed = BTCMasterSeed.init(withMnemonic: mnemonic)
-        
-        NSLog("Generated master seed: %@", masterSeed.representation)
-        
-//        if let anotherSeed = BTCMasterSeed.init(withRepresentation: masterSeed.representation) {
-//
-//            NSLog("Generated another master seed: %@", anotherSeed.representation)
-//        }
-        
-        let keychain = BTCKeychain.init(withMasterSeed: masterSeed)
 
-        let wallet = keychain.getWallet(atIndex: 0)
+        let container = BTCContainer.init(withMnemonic: mnemonic) as Container
+        
+        
+        NSLog("Generated mnemonic: %@", container.mnemonic!.representation)
+        NSLog("Generated master seed: %@", container.masterSeed.representation)
     }
 }
