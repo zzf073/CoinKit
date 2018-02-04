@@ -16,6 +16,15 @@ public class BTCMasterSeed: MasterSeed {
         return data.hexString
     }
     
+    public required convenience init?(withRepresentation representation: String) {
+        
+        guard let data = Data.dataWithHexString(representation) else {
+            return nil
+        }
+        
+        self.init(withData: data)
+    }
+    
     public required convenience init(withMnemonic mnemonic: Mnemonic) {
         
         let mnemonicData = mnemonic.representation.data(using: String.Encoding.utf8)

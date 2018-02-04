@@ -9,4 +9,6 @@ import Foundation
 
 public protocol Representable {
     var representation:String {get}
+    
+    init?(withRepresentation representation:String)
 }

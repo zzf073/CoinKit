@@ -9,6 +9,6 @@ import Foundation
 
 public protocol Mnemonic:Representable {
     
-    init()
-    init(withRepresentation representation:String)
+    static func createNewMnemonic() -> Mnemonic
+    
 }
