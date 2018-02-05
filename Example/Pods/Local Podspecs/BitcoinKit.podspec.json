@@ -22,11 +22,6 @@
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "4"
   },
-  "dependencies": {
-    "Arcane": [
-
-    ]
-  },
   "frameworks": "AVFoundation",
   "vendored_frameworks": "BitcoinKit/Frameworks/CoreBitcoin.framework"
 }

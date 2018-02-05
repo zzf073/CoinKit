@@ -24,4 +24,17 @@ extension Data {
         
         return data
     }
+    
+    var hexString: String {
+        var result = ""
+        
+        var bytes = [UInt8](repeating: 0, count: count)
+        copyBytes(to: &bytes, count: count)
+        
+        for byte in bytes {
+            result += String(format: "%02x", UInt(byte))
+        }
+        
+        return result
+    }
 }

@@ -12,3 +12,10 @@ public protocol Representable {
     
     init?(withRepresentation representation:String)
 }
+
+public protocol DataRepresentable:Representable{
+    
+    var data:Data {get}
+    
+    init(withData data:Data)
+}

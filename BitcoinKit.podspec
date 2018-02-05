@@ -24,7 +24,6 @@ TODO: Add long description of the pod here.
   s.source_files = 'BitcoinKit/Core/**/*'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
   
-  s.dependency 'Arcane'
   s.framework = 'AVFoundation'
   s.vendored_frameworks = 'BitcoinKit/Frameworks/CoreBitcoin.framework'
 end

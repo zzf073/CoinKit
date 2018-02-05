@@ -14,12 +14,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mnemonic = BTCMnemonic.createNewMnemonic()
+        let mnemonic = BitcoinMnemonic.init(withRepresentation: "office engine uphold sphere ski deliver light bonus defense abuse oven crack")!// BitcoinMnemonic.generateNewMnemonic()
 
-        let container = BTCContainer.init(withMnemonic: mnemonic) as Container
+        NSLog("Mnemonic generated: %@", mnemonic.representation)
+
+        let seed = BitcoinSeed.init(withMnemonic: mnemonic)
+
+        NSLog("Seed generated: %@", seed.representation)
         
+        let masterChain = BitcoinKeychain.init(withSeed: seed)
         
-        NSLog("Generated mnemonic: %@", container.mnemonic!.representation)
-        NSLog("Generated master seed: %@", container.masterSeed.representation)
+        NSLog("Root private key:", masterChain.extendedKeyPair.privateKey.representation)
+        
+        if let keyPair = masterChain.getDerivedKeyPair(index: 1) {
+            
+            if let wallet = BitcoinWallet.init(withKeyPair: keyPair) {
+                
+                NSLog("Wallet address: %@", wallet.address)
+            }
+        }
     }
 }

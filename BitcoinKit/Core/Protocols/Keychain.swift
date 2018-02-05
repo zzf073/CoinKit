@@ -9,7 +9,9 @@ import Foundation
 
 public protocol Keychain {
     
-    init(withMasterSeed masterSeed:MasterSeed)
+    var extendedKeyPair:KeyPair {get}
     
-    func derivedWallet(atIndex index:UInt) -> Wallet?
+    init (withSeed seed:Seed)
+    
+    func getDerivedKeyPair(purpose:Int, coin:Int, account:Int, change:Int, index:Int) -> KeyPair?
 }

@@ -304,12 +304,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitcoinKit_Example/Pods-BitcoinKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Arcane/Arcane.framework",
 				"${BUILT_PRODUCTS_DIR}/BitcoinKit/BitcoinKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Arcane.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BitcoinKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
