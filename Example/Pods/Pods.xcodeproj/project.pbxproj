@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A043D2A202891D0006382FE /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A043D29202891D0006382FE /* Wallet.swift */; };
 		0A043D2C20289207006382FE /* BitcoinWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A043D2B20289207006382FE /* BitcoinWallet.swift */; };
+		0A043D2E2028A13B006382FE /* StackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A043D2D2028A13B006382FE /* StackContainer.swift */; };
+		0A043D302028A154006382FE /* BitcoinStackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A043D2F2028A154006382FE /* BitcoinStackContainer.swift */; };
 		19745575334B43C50684EEF8BD5A22D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
 		1EC9E2D60F436EB267607862DF2F44EE /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1279D68FA2AF758BD2F03A5306F68C2B /* Keychain.swift */; };
 		2312F417D5853E01F6030B983C6C490A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
@@ -47,6 +49,8 @@
 		0920DE0D3408173E9BECC1E660F96D81 /* Pods-BitcoinKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BitcoinKit_Example.modulemap"; sourceTree = "<group>"; };
 		0A043D29202891D0006382FE /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		0A043D2B20289207006382FE /* BitcoinWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWallet.swift; sourceTree = "<group>"; };
+		0A043D2D2028A13B006382FE /* StackContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContainer.swift; sourceTree = "<group>"; };
+		0A043D2F2028A154006382FE /* BitcoinStackContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinStackContainer.swift; sourceTree = "<group>"; };
 		0DEFAAACE4CF9D3B3BF9D76D57E18478 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1279D68FA2AF758BD2F03A5306F68C2B /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		173EB85556B8AA3C7E0EF099E165E48C /* Pods-BitcoinKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BitcoinKit_Example-dummy.m"; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				F9CD6C115D0E9F23294A4C4F3873927E /* Representable.swift */,
 				2F8125B21A1ED57D0D10B8D8958762E6 /* Seed.swift */,
 				0A043D29202891D0006382FE /* Wallet.swift */,
+				0A043D2D2028A13B006382FE /* StackContainer.swift */,
 			);
 			name = Protocols;
 			path = BitcoinKit/Core/Protocols;
@@ -235,6 +240,7 @@
 				2F51BB797FEC74050017AD6339E7FCE6 /* BitcoinMnemonic.swift */,
 				7E0CA480EB0FF467EC8ECFAD529135B5 /* BitcoinSeed.swift */,
 				0A043D2B20289207006382FE /* BitcoinWallet.swift */,
+				0A043D2F2028A154006382FE /* BitcoinStackContainer.swift */,
 			);
 			name = Classes;
 			path = BitcoinKit/Core/Classes;
@@ -430,8 +436,10 @@
 				93C67216D24A6A9FD1F3F88FBFC61D6A /* BitcoinKeychain.swift in Sources */,
 				D7C419C703F3E7F28829E4EC28209ECC /* BitcoinKit-dummy.m in Sources */,
 				E830DC877AF677E01BA1E067B40F34F4 /* BitcoinMnemonic.swift in Sources */,
+				0A043D302028A154006382FE /* BitcoinStackContainer.swift in Sources */,
 				8A9507420991C058E50B801B6638E1B7 /* BitcoinSeed.swift in Sources */,
 				90232B1DBEEA6F15B854B2B7B51A2B31 /* DataHelpers.swift in Sources */,
+				0A043D2E2028A13B006382FE /* StackContainer.swift in Sources */,
 				70C83927F7AB733C0972C53A8D31B8AA /* Key.swift in Sources */,
 				0A043D2C20289207006382FE /* BitcoinWallet.swift in Sources */,
 				1EC9E2D60F436EB267607862DF2F44EE /* Keychain.swift in Sources */,
