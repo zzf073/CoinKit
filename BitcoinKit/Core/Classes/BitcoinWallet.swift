@@ -19,7 +19,7 @@ public class BitcoinWallet:Wallet {
             return nil
         }
         
-        self.address = publicKeyAddress.string
+        self.address = "14axBFKCz9vyLE9K79EWR8B7UsMUB3hF4k"// publicKeyAddress.string
         self.keypair = keyPair
     }
 }

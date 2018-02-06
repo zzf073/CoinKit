@@ -9,8 +9,15 @@ import Foundation
 
 public protocol Transaction {
     
-    var senderAddress:String {get}
-    var receiverAddress:String {get}
+    var transactionHash:String {get}
+    var time:Date {get}
     
-//    var ammount:WalletBallance {get}
+    var inputAddresses:[String] {get}
+    var inputAmmounts:[Ammount] {get}
+    
+    var outputAddresses:[String] {get}
+    var outputAmmounts:[Ammount] {get}
+    
+    func isOutgoingForAddress(_ address:String) -> Bool?
+    func getAmmountForAddress(_ address:String) -> Ammount?
 }

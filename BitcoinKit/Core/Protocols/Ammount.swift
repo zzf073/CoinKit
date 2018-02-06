@@ -1,5 +1,5 @@
 //
-//  WalletBallance.swift
+//  Ammount.swift
 //  BitcoinKit
 //
 //  Created by Dmitry on 06.02.2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol WalletBallance:Representable {
+public protocol Ammount:Representable {
     
     var value:Double {get}
     var formattedValue:Double {get}

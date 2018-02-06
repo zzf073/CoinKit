@@ -1,5 +1,5 @@
 //
-//  BitcoinWalletBallance.swift
+//  BitcoinAmmount.swift
 //  BitcoinKit
 //
 //  Created by Dmitry on 06.02.2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class BitcoinWalletBallance: WalletBallance {
+public class BitcoinAmmount: Ammount {
     
     private let numberOfSatoshiInBTC = 100_000_000.0
     

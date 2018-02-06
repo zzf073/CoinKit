@@ -7,8 +7,8 @@
 
 import Foundation
 
-public typealias GetWalletBallanceCompletition = (WalletBallance?, Error?) -> Void
-public typealias GetWalletTransactionsCompletition = (Any?, Error?) -> Void
+public typealias GetWalletBallanceCompletition = (Ammount?, Error?) -> Void
+public typealias GetWalletTransactionsCompletition = ([Transaction]?, Error?) -> Void
 
 public protocol BlockchainService {
     
