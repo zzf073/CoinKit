@@ -26,4 +26,6 @@ TODO: Add long description of the pod here.
   
   s.framework = 'AVFoundation'
   s.vendored_frameworks = 'BitcoinKit/Frameworks/CoreBitcoin.framework'
+  
+  s.dependency 'AFNetworking'
 end
