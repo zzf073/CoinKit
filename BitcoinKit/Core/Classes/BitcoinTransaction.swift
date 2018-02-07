@@ -59,6 +59,6 @@ open class BitcoinTransaction: Transaction {
             return nil
         }
         
-        return self.outputAddresses.contains(address)
+        return self.inputAddresses.contains(address)
     }
 }
