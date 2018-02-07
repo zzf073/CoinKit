@@ -14,15 +14,17 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
     
     fileprivate convenience init?(withDictionary dictionary:[String:Any]) {
         
+        guard let hash = dictionary["hash"] as? String else { return nil }
+        guard let timeInterval = dictionary["time"] as? Double else { return nil }
+        guard let size = dictionary["size"] as? Int else { return nil }
+        guard let blockHeight = dictionary["block_height"] as? Int else { return nil }
+        guard let txWeight = dictionary["weight"] as? Int else { return nil }
+        
         var outputAddresses = [String]()
         var outputAmmounts = [BitcoinAmmount]()
         
         var inputAddresses = [String]()
         var inputAmmounts = [BitcoinAmmount]()
-        
-        guard let hash = dictionary["hash"] as? String, let timeInterval = dictionary["time"] as? Double else {
-            return nil
-        }
         
         (dictionary["inputs"] as? [[String:Any]])?.forEach({ (inputDictionary) in
             
@@ -45,8 +47,11 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
             }
         })
         
-        self.init(transactionHash:hash,
-                  time:Date.init(timeIntervalSince1970: timeInterval),
+        self.init(transactionHash: hash,
+                  time: Date.init(timeIntervalSince1970: timeInterval),
+                  size: size,
+                  blockHeight: blockHeight,
+                  weight: txWeight,
                   inputAddressed: inputAddresses,
                   inputAmmounts: inputAmmounts,
                   outputAddresses: outputAddresses,

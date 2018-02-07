@@ -11,6 +11,9 @@ public protocol Transaction {
     
     var transactionHash:String {get}
     var time:Date {get}
+    var size:Int {get} //transaction size in bytes
+    var blockHeight:Int {get}
+    var weight:Int {get} //transaction weight
     
     var inputAddresses:[String] {get}
     var inputAmmounts:[Ammount] {get}

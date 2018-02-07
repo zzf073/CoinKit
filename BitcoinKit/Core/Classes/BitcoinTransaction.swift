@@ -8,9 +8,12 @@
 import Foundation
 
 open class BitcoinTransaction: Transaction {
-   
+    
     public var transactionHash: String
     public var time: Date
+    public var size: Int
+    public var blockHeight: Int
+    public var weight: Int
     
     public var inputAddresses: [String]
     public var inputAmmounts: [Ammount]
@@ -18,10 +21,20 @@ open class BitcoinTransaction: Transaction {
     public var outputAddresses: [String]
     public var outputAmmounts: [Ammount]
     
-    init(transactionHash:String, time:Date, inputAddressed:[String], inputAmmounts:[Ammount], outputAddresses:[String], outputAmmounts:[Ammount]) {
+    init(transactionHash:String,
+         time:Date, size:Int,
+         blockHeight:Int,
+         weight:Int,
+         inputAddressed:[String],
+         inputAmmounts:[Ammount],
+         outputAddresses:[String],
+         outputAmmounts:[Ammount]) {
         
         self.transactionHash = transactionHash
         self.time = time
+        self.size = size
+        self.blockHeight = blockHeight
+        self.weight = weight
         
         self.inputAddresses = inputAddressed
         self.inputAmmounts = inputAmmounts
