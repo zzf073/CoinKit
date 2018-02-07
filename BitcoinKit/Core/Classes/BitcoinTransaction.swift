@@ -32,29 +32,25 @@ open class BitcoinTransaction: Transaction {
     
     public func getAmmountForAddress(_ address: String) -> Ammount? {
         
-        var ammount:Ammount?
+        var value:Double = 0
         
         self.outputAddresses.forEach { (outputAddress) in
             
             if outputAddress == address {
                 
-                ammount = self.outputAmmounts[self.outputAddresses.index(of: outputAddress)!]
+                value += self.outputAmmounts[self.outputAddresses.index(of: outputAddress)!].value
             }
-        }
-        
-        guard ammount == nil else {
-            return ammount
         }
         
         self.inputAddresses.forEach { (inputAddress) in
             
             if inputAddress == address {
                 
-                ammount = self.inputAmmounts[self.inputAddresses.index(of: inputAddress)!]
+                value += self.inputAmmounts[self.inputAddresses.index(of: inputAddress)!].value
             }
         }
         
-        return ammount
+        return BitcoinAmmount.init(withValue: value)
     }
     
     public func isOutgoingForAddress(_ address: String) -> Bool? {
