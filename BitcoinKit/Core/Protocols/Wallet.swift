@@ -10,7 +10,8 @@ import Foundation
 public protocol Wallet {
     
     var address:String {get}
-    var keypair:KeyPair {get}
+    var keypair:KeyPair? {get}
     
+    init(withAddress address:String)
     init?(withKeyPair keyPair:KeyPair)
 }

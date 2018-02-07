@@ -11,15 +11,20 @@ import CoreBitcoin
 public class BitcoinWallet:Wallet {
     
     public var address: String
-    public var keypair: KeyPair
+    public var keypair: KeyPair?
     
-    public required init?(withKeyPair keyPair: KeyPair) {
+    public required convenience init?(withKeyPair keyPair: KeyPair) {
         
         guard let publicKeyData = BTCHash160(keyPair.publicKey.data) as Data?, let publicKeyAddress = BTCPublicKeyAddress.init(data: publicKeyData as Data)  else {
             return nil
         }
         
-        self.address = "14axBFKCz9vyLE9K79EWR8B7UsMUB3hF4k"// publicKeyAddress.string
+        self.init(withAddress: publicKeyAddress.string)
+        
         self.keypair = keyPair
+    }
+    
+    public required init(withAddress address:String) {
+        self.address = address
     }
 }
