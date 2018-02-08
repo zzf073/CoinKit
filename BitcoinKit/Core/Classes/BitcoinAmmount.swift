@@ -15,7 +15,7 @@ public class BitcoinAmmount: Ammount {
     public var formattedValue: Double
     
     public var representation: String {
-        return "\(self.formattedValue) BTC"
+        return "\(self.formattedValue == 0.0 ? 0 : self.formattedValue) BTC"
     }
     
     required public init(withValue value: Double) {
