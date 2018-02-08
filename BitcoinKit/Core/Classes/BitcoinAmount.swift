@@ -1,5 +1,5 @@
 //
-//  BitcoinAmmount.swift
+//  BitcoinAmount.swift
 //  BitcoinKit
 //
 //  Created by Dmitry on 06.02.2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class BitcoinAmmount: Ammount {
+public class BitcoinAmount: Amount {
     
     private let numberOfSatoshiInBTC:Int64 = 100_000_000
     

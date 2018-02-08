@@ -16,19 +16,19 @@ open class BitcoinTransaction: Transaction {
     public var weight: Int
     
     public var inputAddresses: [String]
-    public var inputAmmounts: [Ammount]
+    public var inputAmounts: [Amount]
     
     public var outputAddresses: [String]
-    public var outputAmmounts: [Ammount]
+    public var outputAmounts: [Amount]
     
     init(transactionHash:String,
          time:Date, size:Int,
          blockHeight:Int,
          weight:Int,
          inputAddressed:[String],
-         inputAmmounts:[Ammount],
+         inputAmounts:[Amount],
          outputAddresses:[String],
-         outputAmmounts:[Ammount]) {
+         outputAmounts:[Amount]) {
         
         self.transactionHash = transactionHash
         self.time = time
@@ -37,13 +37,13 @@ open class BitcoinTransaction: Transaction {
         self.weight = weight
         
         self.inputAddresses = inputAddressed
-        self.inputAmmounts = inputAmmounts
+        self.inputAmounts = inputAmounts
         
         self.outputAddresses = outputAddresses
-        self.outputAmmounts = outputAmmounts
+        self.outputAmounts = outputAmounts
     }
     
-    public func getAmmountForAddress(_ address: String) -> Ammount? {
+    public func getAmountForAddress(_ address: String) -> Amount? {
         
         var value:Int64 = 0
         
@@ -51,7 +51,7 @@ open class BitcoinTransaction: Transaction {
             
             if outputAddress == address {
                 
-                value += self.outputAmmounts[self.outputAddresses.index(of: outputAddress)!].value
+                value += self.outputAmounts[self.outputAddresses.index(of: outputAddress)!].value
             }
         }
         
@@ -59,11 +59,11 @@ open class BitcoinTransaction: Transaction {
             
             if inputAddress == address {
                 
-                value += self.inputAmmounts[self.inputAddresses.index(of: inputAddress)!].value
+                value += self.inputAmounts[self.inputAddresses.index(of: inputAddress)!].value
             }
         }
         
-        return BitcoinAmmount.init(withValue: value)
+        return BitcoinAmount.init(withValue: value)
     }
     
     public func isOutgoingForAddress(_ address: String) -> Bool? {

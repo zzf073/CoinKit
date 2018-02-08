@@ -21,10 +21,10 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
         guard let txWeight = dictionary["weight"] as? Int else { return nil }
         
         var outputAddresses = [String]()
-        var outputAmmounts = [BitcoinAmmount]()
+        var outputAmounts = [BitcoinAmount]()
         
         var inputAddresses = [String]()
-        var inputAmmounts = [BitcoinAmmount]()
+        var inputAmounts = [BitcoinAmount]()
         
         (dictionary["inputs"] as? [[String:Any]])?.forEach({ (inputDictionary) in
             
@@ -33,7 +33,7 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
                 if let inputAddress = prevOut["addr"] as? String, let value = prevOut["value"] as? Int64 {
                     
                     inputAddresses.append(inputAddress)
-                    inputAmmounts.append(BitcoinAmmount.init(withValue: value))
+                    inputAmounts.append(BitcoinAmount.init(withValue: value))
                 }
             }
         })
@@ -43,7 +43,7 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
             if let outputAddress = outputDictionary["addr"] as? String, let value = outputDictionary["value"] as? Int64 {
                 
                 outputAddresses.append(outputAddress)
-                outputAmmounts.append(BitcoinAmmount.init(withValue: value))
+                outputAmounts.append(BitcoinAmount.init(withValue: value))
             }
         })
         
@@ -53,13 +53,13 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
                   blockHeight: blockHeight,
                   weight: txWeight,
                   inputAddressed: inputAddresses,
-                  inputAmmounts: inputAmmounts,
+                  inputAmounts: inputAmounts,
                   outputAddresses: outputAddresses,
-                  outputAmmounts: outputAmmounts)
+                  outputAmounts: outputAmounts)
     }
 }
 
-fileprivate class BlockChainAmmount:BitcoinAmmount {
+fileprivate class BlockChainAmount:BitcoinAmount {
     
     fileprivate convenience init?(withDictionary dictionary:[String:Any]) {
         
@@ -110,7 +110,7 @@ public class BlockchainInfoService: BlockchainService {
                 return
             }
             
-            if let dictionary = (result as? [String:Any])?.first?.value as? [String:Any], let ballance = BlockChainAmmount.init(withDictionary: dictionary) {
+            if let dictionary = (result as? [String:Any])?.first?.value as? [String:Any], let ballance = BlockChainAmount.init(withDictionary: dictionary) {
                 
                 completition(ballance, nil)
             }

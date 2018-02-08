@@ -11,10 +11,10 @@ public typealias TransactionBuilderCompletition = (TransactionBuilderResult?, Er
 
 public protocol TransactionBuilder {
     
-    func buildTransaction(for amount:Ammount,
+    func buildTransaction(for amount:Amount,
                           to receiverWallet:Wallet,
                           from senderWallet:Wallet,
-                          fee:Ammount,
+                          fee:Amount,
                           completition:TransactionBuilderCompletition)
     
 }

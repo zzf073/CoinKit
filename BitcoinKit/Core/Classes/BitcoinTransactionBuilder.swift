@@ -10,7 +10,7 @@ import CoreBitcoin
 
 class BitcoinTransactionBuilder: TransactionBuilder {
     
-    func buildTransaction(for amount: Ammount, to receiverWallet: Wallet, from senderWallet: Wallet, fee: Ammount, completition: (TransactionBuilderResult?, Error?) -> Void) {
+    func buildTransaction(for amount: Amount, to receiverWallet: Wallet, from senderWallet: Wallet, fee: Amount, completition: (TransactionBuilderResult?, Error?) -> Void) {
         
         completition(TransactionBuilderResult.init(transactionData: Data.init()), nil)
         

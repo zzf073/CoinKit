@@ -16,11 +16,11 @@ public protocol Transaction {
     var weight:Int {get} //transaction weight
     
     var inputAddresses:[String] {get}
-    var inputAmmounts:[Ammount] {get}
+    var inputAmounts:[Amount] {get}
     
     var outputAddresses:[String] {get}
-    var outputAmmounts:[Ammount] {get}
+    var outputAmounts:[Amount] {get}
     
     func isOutgoingForAddress(_ address:String) -> Bool?
-    func getAmmountForAddress(_ address:String) -> Ammount?
+    func getAmountForAddress(_ address:String) -> Amount?
 }

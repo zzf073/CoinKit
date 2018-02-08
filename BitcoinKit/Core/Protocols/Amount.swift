@@ -1,5 +1,5 @@
 //
-//  Ammount.swift
+//  Amount.swift
 //  BitcoinKit
 //
 //  Created by Dmitry on 06.02.2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Ammount:Representable {
+public protocol Amount:Representable {
     
     var value:Int64 {get}
     var formattedValue:Double {get}

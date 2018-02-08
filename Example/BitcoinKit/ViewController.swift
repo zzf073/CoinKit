@@ -28,10 +28,10 @@ class ViewController: UIViewController {
         
         NSLog("Wallet: %@", wallet.address)
         
-        self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmmount.init(withValue: 10000),
+        self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmount.init(withValue: 10000),
                                                                    to: BitcoinWallet.init(withAddress: "1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd"),
                                                                    from: wallet,
-                                                                   fee: BitcoinAmmount.init(withValue: 10000))
+                                                                   fee: BitcoinAmount.init(withValue: 10000))
         { [weak self] (result, error) in
             
             if let transaction = result {
@@ -73,9 +73,9 @@ class ViewController: UIViewController {
 //                    transactions?.forEach({ (transaction) in
 //
 //                        let isIncoming = transaction.isOutgoingForAddress(wallet.address)!
-//                        let ammount = transaction.getAmmountForAddress(wallet.address)!
+//                        let amount = transaction.getAmountForAddress(wallet.address)!
 //
-//                        NSLog("%@ %@ at %@ / %@", isIncoming ? "+" : "-", ammount.representation, String.init(describing: transaction.time), transaction.transactionHash)
+//                        NSLog("%@ %@ at %@ / %@", isIncoming ? "+" : "-", amount.representation, String.init(describing: transaction.time), transaction.transactionHash)
 //                    })
 //                }
 //            }

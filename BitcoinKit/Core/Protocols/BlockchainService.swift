@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias GetWalletBallanceCompletition = (Ammount?, Error?) -> Void
+public typealias GetWalletBallanceCompletition = (Amount?, Error?) -> Void
 public typealias GetWalletTransactionsCompletition = ([Transaction]?, Error?) -> Void
 public typealias PushTransactionCompletition = (Error?) -> Void
 
