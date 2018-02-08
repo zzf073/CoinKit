@@ -9,9 +9,9 @@ import Foundation
 
 public protocol Ammount:Representable {
     
-    var value:Double {get}
+    var value:Int64 {get}
     var formattedValue:Double {get}
     
-    init(withValue value:Double)
+    init(withValue value:Int64)
     init(withFormattedValue formattedValue:Double)
 }

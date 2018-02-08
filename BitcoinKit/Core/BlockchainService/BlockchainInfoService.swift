@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import CoreBitcoin
 import Foundation
 import AFNetworking
 
@@ -30,7 +30,7 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
             
             if let prevOut = inputDictionary["prev_out"] as? [String:Any] {
                 
-                if let inputAddress = prevOut["addr"] as? String, let value = prevOut["value"] as? Double {
+                if let inputAddress = prevOut["addr"] as? String, let value = prevOut["value"] as? Int64 {
                     
                     inputAddresses.append(inputAddress)
                     inputAmmounts.append(BitcoinAmmount.init(withValue: value))
@@ -40,7 +40,7 @@ fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
         
         (dictionary["out"] as? [[String:Any]])?.forEach({ (outputDictionary) in
             
-            if let outputAddress = outputDictionary["addr"] as? String, let value = outputDictionary["value"] as? Double {
+            if let outputAddress = outputDictionary["addr"] as? String, let value = outputDictionary["value"] as? Int64 {
                 
                 outputAddresses.append(outputAddress)
                 outputAmmounts.append(BitcoinAmmount.init(withValue: value))
@@ -63,7 +63,7 @@ fileprivate class BlockChainAmmount:BitcoinAmmount {
     
     fileprivate convenience init?(withDictionary dictionary:[String:Any]) {
         
-        guard let finalBalance = dictionary["final_balance"] as? Double else {
+        guard let finalBalance = dictionary["final_balance"] as? Int64 else {
             return nil
         }
         
@@ -94,6 +94,10 @@ public class BlockchainInfoService: BlockchainService {
     
     public init() {
         
+    }
+    
+    public var transactionBuilder: TransactionBuilder {
+        return BitcoinTransactionBuilder()
     }
     
     public func getWalletBallance(_ wallet: Wallet, withCompletition completition: @escaping GetWalletBallanceCompletition) {
@@ -144,5 +148,11 @@ public class BlockchainInfoService: BlockchainService {
                 //TODO: Generate error
             }
         }
+    }
+    
+    public func pushTransaction(_ transaction: TransactionBuilderResult, completition: (Error?) -> Void) {
+        
+        completition(nil)
+        
     }
 }

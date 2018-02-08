@@ -45,7 +45,7 @@ open class BitcoinTransaction: Transaction {
     
     public func getAmmountForAddress(_ address: String) -> Ammount? {
         
-        var value:Double = 0
+        var value:Int64 = 0
         
         self.outputAddresses.forEach { (outputAddress) in
             

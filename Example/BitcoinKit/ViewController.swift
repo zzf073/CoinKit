@@ -11,46 +11,74 @@ import BitcoinKit
 
 class ViewController: UIViewController {
 
-    let btcService = BitcoinBlockchainService()
+    let blockchainService:BlockchainService = BitcoinBlockchainService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mnemonic = BitcoinMnemonic.init(withRepresentation: "office engine uphold sphere ski deliver light bonus defense abuse oven crack")!// BitcoinMnemonic.generateNewMnemonic()
-
-        NSLog("Mnemonic generated: %@", mnemonic.representation)
-
-        let seed = BitcoinSeed.init(withMnemonic: mnemonic)
-
-        NSLog("Seed generated: %@", seed.representation)
+        //wallet 1: "region plunge runway punch grocery else raise few churn chalk flock repeat" / 1CLLwNeU9P5n1b1169epuu7z2EoDdaZLsL
+        //wallet 2: "tube improve crater box peanut blanket typical buddy image meadow involve income" / 1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd
         
-        let masterChain = BitcoinKeychain.init(withSeed: seed)
         
-        NSLog("Root private key:", masterChain.extendedKeyPair.privateKey.representation)
+        let mnemonic = BitcoinMnemonic.init(withRepresentation: "region plunge runway punch grocery else raise few churn chalk flock repeat")!// BitcoinMnemonic.generateNewMnemonic()
         
-        if let keyPair = masterChain.getDerivedKeyPair(index: 1) {
+        let stack = BitcoinStackContainer.init(withMnemonic: mnemonic)
+        
+        let wallet = stack.deriverDefaultWallet()!
+        
+        NSLog("Wallet: %@", wallet.address)
+        
+        self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmmount.init(withValue: 10000),
+                                                                   to: BitcoinWallet.init(withAddress: "1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd"),
+                                                                   from: wallet,
+                                                                   fee: BitcoinAmmount.init(withValue: 10000))
+        { [weak self] (result, error) in
             
-            if let wallet = BitcoinWallet.init(withKeyPair: keyPair) {
+            if let transaction = result {
                 
-                NSLog("Wallet address: %@", wallet.address)
+                NSLog("Transaction builded!")
                 
-                self.btcService.getWalletBallance(wallet) { (ballance, error) in
-                    NSLog("Wallet ballance: %@", ballance!.representation)
-                }
-                
-                self.btcService.getWalletTransactions(wallet, offset: 0, count: 10) { (transactions, error) in
+                self?.blockchainService.pushTransaction(transaction, completition: { (error) in
                     
-                    NSLog("Transactions loaded:")
-                    
-                    transactions?.forEach({ (transaction) in
-                        
-                        let isIncoming = transaction.isOutgoingForAddress(wallet.address)!
-                        let ammount = transaction.getAmmountForAddress(wallet.address)!
-                        
-                        NSLog("%@ %@ at %@ / %@", isIncoming ? "+" : "-", ammount.representation, String.init(describing: transaction.time), transaction.transactionHash)
-                    })
-                }
+                    NSLog("Transaction pushed!")
+                })
             }
         }
+        
+
+//        NSLog("Mnemonic generated: %@", mnemonic.representation)
+//
+//        let seed = BitcoinSeed.init(withMnemonic: mnemonic)
+//
+//        NSLog("Seed generated: %@", seed.representation)
+//
+//        let masterChain = BitcoinKeychain.init(withSeed: seed)
+//
+//        NSLog("Root private key:", masterChain.extendedKeyPair.privateKey.representation)
+//
+//        if let keyPair = masterChain.getDerivedKeyPair(index: 1) {
+//
+//            if let wallet = BitcoinWallet.init(withKeyPair: keyPair) {
+//
+//                NSLog("Wallet address: %@", wallet.address)
+//
+//                self.btcService.getWalletBallance(wallet) { (ballance, error) in
+//                    NSLog("Wallet ballance: %@", ballance!.representation)
+//                }
+//
+//                self.btcService.getWalletTransactions(wallet, offset: 0, count: 10) { (transactions, error) in
+//
+//                    NSLog("Transactions loaded:")
+//
+//                    transactions?.forEach({ (transaction) in
+//
+//                        let isIncoming = transaction.isOutgoingForAddress(wallet.address)!
+//                        let ammount = transaction.getAmmountForAddress(wallet.address)!
+//
+//                        NSLog("%@ %@ at %@ / %@", isIncoming ? "+" : "-", ammount.representation, String.init(describing: transaction.time), transaction.transactionHash)
+//                    })
+//                }
+//            }
+//        }
     }
 }

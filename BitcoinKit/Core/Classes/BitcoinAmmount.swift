@@ -9,24 +9,24 @@ import Foundation
 
 public class BitcoinAmmount: Ammount {
     
-    private let numberOfSatoshiInBTC = 100_000_000.0
+    private let numberOfSatoshiInBTC:Int64 = 100_000_000
     
-    public var value: Double
+    public var value: Int64
     public var formattedValue: Double
     
     public var representation: String {
         return "\(self.formattedValue == 0.0 ? 0 : self.formattedValue) BTC"
     }
     
-    required public init(withValue value: Double) {
+    required public init(withValue value: Int64) {
         
         self.value = value
-        self.formattedValue = value / self.numberOfSatoshiInBTC
+        self.formattedValue = Double(value) / Double(self.numberOfSatoshiInBTC)
     }
     
     public required init(withFormattedValue formattedValue: Double) {
         
-        self.value = formattedValue * self.numberOfSatoshiInBTC
+        self.value = Int64(formattedValue) * self.numberOfSatoshiInBTC
         self.formattedValue = formattedValue
     }
     
