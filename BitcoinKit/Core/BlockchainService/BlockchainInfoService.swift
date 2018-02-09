@@ -155,4 +155,8 @@ public class BlockchainInfoService: BlockchainService {
         completition(nil)
         
     }
+    
+    public func getTransactionFee(_ completition: (Amount?, Error?) -> Void) {
+        completition(BitcoinAmount.init(withFormattedValue: 0.001), nil)
+    }
 }

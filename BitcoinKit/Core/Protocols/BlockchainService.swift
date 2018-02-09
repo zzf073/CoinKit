@@ -10,6 +10,7 @@ import Foundation
 public typealias GetWalletBallanceCompletition = (Amount?, Error?) -> Void
 public typealias GetWalletTransactionsCompletition = ([Transaction]?, Error?) -> Void
 public typealias PushTransactionCompletition = (Error?) -> Void
+public typealias GetTransactionFeeCompletition = (Amount?, Error?) -> Void
 
 public protocol BlockchainService {
     
@@ -18,4 +19,5 @@ public protocol BlockchainService {
     func getWalletBallance(_ wallet:Wallet, withCompletition completition:@escaping GetWalletBallanceCompletition)
     func getWalletTransactions(_ wallet:Wallet, offset:UInt, count:UInt, withCompletition completition:@escaping GetWalletTransactionsCompletition)
     func pushTransaction(_ transaction:TransactionBuilderResult, completition:PushTransactionCompletition)
+    func getTransactionFee(_ completition:GetTransactionFeeCompletition)
 }
