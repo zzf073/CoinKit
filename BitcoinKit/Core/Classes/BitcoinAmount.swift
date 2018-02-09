@@ -9,7 +9,7 @@ import Foundation
 
 public class BitcoinAmount: Amount {
     
-    private let numberOfSatoshiInBTC:Int64 = 100_000_000
+    private static let numberOfSatoshiInBTC:Int64 = 100_000_000
     
     public var value: Int64
     public var formattedValue: Double
@@ -21,12 +21,18 @@ public class BitcoinAmount: Amount {
     required public init(withValue value: Int64) {
         
         self.value = value
-        self.formattedValue = Double(value) / Double(self.numberOfSatoshiInBTC)
+        self.formattedValue = Double(value) / Double(BitcoinAmount.numberOfSatoshiInBTC)
     }
     
-    public required init(withFormattedValue formattedValue: Double) {
+    public required init?(withFormattedValue formattedValue: Double) {
         
-        self.value = Int64(formattedValue) * self.numberOfSatoshiInBTC
+        let int64Value = Int64(formattedValue)
+        
+        if int64Value > 0 && (Int64.max / int64Value) < BitcoinAmount.numberOfSatoshiInBTC {
+            return nil
+        }
+        
+        self.value = Int64(formattedValue) * BitcoinAmount.numberOfSatoshiInBTC
         self.formattedValue = formattedValue
     }
     

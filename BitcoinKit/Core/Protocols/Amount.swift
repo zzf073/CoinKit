@@ -13,5 +13,5 @@ public protocol Amount:Representable {
     var formattedValue:Double {get}
     
     init(withValue value:Int64)
-    init(withFormattedValue formattedValue:Double)
+    init?(withFormattedValue formattedValue:Double)
 }
