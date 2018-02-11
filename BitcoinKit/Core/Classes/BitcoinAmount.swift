@@ -32,7 +32,7 @@ public class BitcoinAmount: Amount {
             return nil
         }
         
-        self.value = Int64(formattedValue) * BitcoinAmount.numberOfSatoshiInBTC
+        self.value = Int64(formattedValue * Double(BitcoinAmount.numberOfSatoshiInBTC))
         self.formattedValue = formattedValue
     }
     

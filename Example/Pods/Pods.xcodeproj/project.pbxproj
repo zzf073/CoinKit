@@ -65,7 +65,7 @@
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDAFE16F1C06EFAE434D84600766A8 /* UIRefreshControl+AFNetworking.m */; };
 		B72D2BAF8162CCABC7452F3100509D87 /* BitcoinTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3B0B7474D3EAAE87194E1A1B31F43 /* BitcoinTransactionBuilder.swift */; };
 		C19DBEE54A5D0930B364BE9B3F4B5CAB /* Pods-BitcoinKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32683A384D6044DF225E21642A57EA01 /* Pods-BitcoinKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3EE3CCBF9AB12D62911FE9FEED940A0 /* TransactionBuilderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8FEE7268B82B478277E674337434 /* TransactionBuilderResult.swift */; };
+		C3EE3CCBF9AB12D62911FE9FEED940A0 /* BroadcastableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8FEE7268B82B478277E674337434 /* BroadcastableTransaction.swift */; };
 		C80857F5AE24C8C195D4E3C6E534D67D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C09B94F19533FBD391278CB20185D /* AFNetworking.framework */; };
 		CD57231E430B5780511F9BF6721A798C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F56A9ECC980D72382EAC08B59664DC /* AVFoundation.framework */; };
 		CD980231AF84086677C29B6480FCB00A /* BitcoinTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14B81418DCAC9AA507FD88E311F2604 /* BitcoinTransaction.swift */; };
@@ -118,7 +118,7 @@
 		0D2D3F6D3E1A81FC7366F8E469CE478C /* Pods_BitcoinKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9DFB1EDE8B655B8140B04B8DFEFC54 /* Seed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		103EE194B42BE62229AA5C5351E9BFE9 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		145E8FEE7268B82B478277E674337434 /* TransactionBuilderResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionBuilderResult.swift; sourceTree = "<group>"; };
+		145E8FEE7268B82B478277E674337434 /* BroadcastableTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BroadcastableTransaction.swift; sourceTree = "<group>"; };
 		16B66C0AEBC9F9724A670DCF79BE4531 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		173EB85556B8AA3C7E0EF099E165E48C /* Pods-BitcoinKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BitcoinKit_Example-dummy.m"; sourceTree = "<group>"; };
 		17418EFAE45AE8CFE38E2E56305E649A /* Pods-BitcoinKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BitcoinKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,7 +389,7 @@
 			children = (
 				5002C913EB75616045F222D0D99F9FB4 /* Key.swift */,
 				AF61CBC8888534423249BC7CEF16E945 /* Keypair.swift */,
-				145E8FEE7268B82B478277E674337434 /* TransactionBuilderResult.swift */,
+				145E8FEE7268B82B478277E674337434 /* BroadcastableTransaction.swift */,
 			);
 			name = Structs;
 			path = BitcoinKit/Core/Structs;
@@ -755,7 +755,7 @@
 				A2317591F77F44A016B7C820242BB122 /* StackContainer.swift in Sources */,
 				8FD05777A2E9CAB7CEA3D7EE13046DD4 /* Transaction.swift in Sources */,
 				9D2791B2E4BDA2DF7A066448D192BC80 /* TransactionBuilder.swift in Sources */,
-				C3EE3CCBF9AB12D62911FE9FEED940A0 /* TransactionBuilderResult.swift in Sources */,
+				C3EE3CCBF9AB12D62911FE9FEED940A0 /* BroadcastableTransaction.swift in Sources */,
 				784AF73349A97B974634CA8AD31B2683 /* Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

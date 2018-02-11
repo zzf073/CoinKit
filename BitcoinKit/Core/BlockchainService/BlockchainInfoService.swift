@@ -150,13 +150,17 @@ public class BlockchainInfoService: BlockchainService {
         }
     }
     
-    public func pushTransaction(_ transaction: TransactionBuilderResult, completition: (Error?) -> Void) {
+    public func broadcastTransaction(_ transaction: BroadcastableTransaction, completition: @escaping (Error?) -> Void) {
         
-        completition(nil)
+        let request = BTCBlockchainInfo.init().requestForTransactionBroadcast(with: transaction.transactionData)!
         
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.init()) { (response, data, error) in
+            
+            completition(error)
+        }
     }
     
     public func getTransactionFee(_ completition: (Amount?, Error?) -> Void) {
-        completition(BitcoinAmount.init(withFormattedValue: 0.001), nil)
+        completition(BitcoinAmount.init(withValue: BTCTransaction.init().estimatedFee), nil)
     }
 }

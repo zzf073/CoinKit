@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias TransactionBuilderCompletition = (TransactionBuilderResult?, Error?) -> Void
+public typealias TransactionBuilderCompletition = (BroadcastableTransaction?, Error?) -> Void
 
 public protocol TransactionBuilder {
     
@@ -15,6 +15,6 @@ public protocol TransactionBuilder {
                           to receiverWallet:Wallet,
                           from senderWallet:Wallet,
                           fee:Amount,
-                          completition:TransactionBuilderCompletition)
+                          completition:@escaping TransactionBuilderCompletition)
     
 }

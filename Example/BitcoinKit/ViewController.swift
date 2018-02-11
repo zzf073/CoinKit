@@ -28,22 +28,28 @@ class ViewController: UIViewController {
         
         NSLog("Wallet: %@", wallet.address)
         
-        self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmount.init(withValue: 10000),
-                                                                   to: BitcoinWallet.init(withAddress: "1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd"),
-                                                                   from: wallet,
-                                                                   fee: BitcoinAmount.init(withValue: 10000))
-        { [weak self] (result, error) in
-            
-            if let transaction = result {
-                
-                NSLog("Transaction builded!")
-                
-                self?.blockchainService.pushTransaction(transaction, completition: { (error) in
-                    
-                    NSLog("Transaction pushed!")
-                })
-            }
-        }
+//        self.blockchainService.getWalletBallance(wallet) { (ballance, nil) in
+//            
+//            NSLog("Ballance: %@", ballance!.representation)
+//            
+//            self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmount.init(withFormattedValue: 0.001)!,
+//                                                                       to: BitcoinWallet.init(withAddress: "1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd"),
+//                                                                       from: wallet,
+//                                                                       fee: BitcoinAmount.init(withFormattedValue: 0.001)!)
+//            { [weak self] (result, error) in
+//                
+//                if let transaction = result {
+//                    
+//                    NSLog("Transaction builded!")
+//                    
+//                    self?.blockchainService.broadcastTransaction(transaction, completition: { (error) in
+//                        
+//                        NSLog("Transaction pushed!")
+//                    })
+//                }
+//            }
+//        }
+        
         
 
 //        NSLog("Mnemonic generated: %@", mnemonic.representation)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TransactionBuilderResult {
+public struct BroadcastableTransaction {
     
     public var transactionData:Data
     
