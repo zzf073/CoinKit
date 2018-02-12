@@ -92,12 +92,10 @@ fileprivate class BlockchainAPI {
 
 public class BlockchainInfoService: BlockchainService {
     
+    lazy private var transactionBuilder = BitcoinTransactionBuilder.init()
+    
     public init() {
         
-    }
-    
-    public var transactionBuilder: TransactionBuilder {
-        return BitcoinTransactionBuilder()
     }
     
     public func getWalletBallance(_ wallet: Wallet, withCompletition completition: @escaping GetWalletBallanceCompletition) {
@@ -150,17 +148,97 @@ public class BlockchainInfoService: BlockchainService {
         }
     }
     
-    public func broadcastTransaction(_ transaction: BroadcastableTransaction, completition: @escaping (Error?) -> Void) {
-        
-        let request = BTCBlockchainInfo.init().requestForTransactionBroadcast(with: transaction.transactionData)!
-        
-        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.init()) { (response, data, error) in
-            
-            completition(error)
-        }
-    }
-    
     public func getTransactionFee(_ completition: (Amount?, Error?) -> Void) {
         completition(BitcoinAmount.init(withValue: BTCTransaction.init().estimatedFee), nil)
     }
+    
+    public func broadcastTransaction(from senderWallet: Wallet, to receiverWallet: Wallet, amount: Amount, fee: Amount, completition: @escaping BroadcastTransactionCompletition) {
+        
+        self.transactionBuilder.buildTransaction(for: amount, to: receiverWallet, from: senderWallet, fee: fee) { (transaction, error) in
+            
+            guard error == nil, transaction != nil else {
+                completition(error)
+                return
+            }
+            
+            let request = BTCBlockchainInfo.init().requestForTransactionBroadcast(with: transaction!.transactionData)! as URLRequest
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.init(), completionHandler: { (response, data, error) in
+                
+                DispatchQueue.main.async {
+                    completition(error)
+                }
+            })
+        }
+    }
 }
+
+fileprivate class BitcoinTransactionBuilderDataSource:NSObject, BTCTransactionBuilderDataSource {
+    
+    private var privateKey:Data
+    private var unspentOutputs:[BTCTransactionOutput]
+    
+    init(privateKey:Data, unspentOutputs:[BTCTransactionOutput]) {
+        self.privateKey = privateKey
+        self.unspentOutputs = unspentOutputs
+    }
+    
+    func unspentOutputs(for txbuilder: BTCTransactionBuilder!) -> NSEnumerator! {
+        return NSArray.init(array: self.unspentOutputs).objectEnumerator()
+    }
+    
+    func transactionBuilder(_ txbuilder: BTCTransactionBuilder!, keyForUnspentOutput txout: BTCTransactionOutput!) -> BTCKey! {
+        return BTCKey.init(privateKey: self.privateKey)
+    }
+}
+
+fileprivate class BitcoinTransactionBuilder:NSObject  {
+    
+    lazy private var operationQueue = OperationQueue.init()
+    
+    func buildTransaction(for amount: Amount, to receiverWallet: Wallet, from senderWallet: Wallet, fee: Amount, completition: @escaping (BroadcastableTransaction?, Error?) -> Void) {
+        
+        self.operationQueue.addOperation {
+            
+            var data:Data?
+            
+            if let privateKeyData = senderWallet.keypair?.privateKey.data {
+                
+                do {
+                    data = try self.buildTransactionSync(amount: amount.value,
+                                                         receiverAddress: receiverWallet.address,
+                                                         privateKey: privateKeyData,
+                                                         fee: fee.value)
+                }
+                catch {
+                    completition(nil, error)
+                    return
+                }
+                
+            }
+            
+            completition(data != nil ? BroadcastableTransaction.init(transactionData: data!) : nil, nil)
+        }
+    }
+    
+    private func buildTransactionSync(amount:Int64, receiverAddress:String, privateKey:Data, fee:Int64) throws -> Data? {
+        
+        let key = BTCKey.init(privateKey: privateKey)!
+        
+        guard let senderAddress = key.compressedPublicKeyAddress else {
+            return nil
+        }
+        
+        let unspentOutputs = try BTCBlockchainInfo.init().unspentOutputs(withAddresses: [senderAddress]) as! [BTCTransactionOutput]
+        
+        let dataSource = BitcoinTransactionBuilderDataSource.init(privateKey: privateKey, unspentOutputs: unspentOutputs)
+        
+        let builder = BTCTransactionBuilder.init()
+        builder.dataSource = dataSource
+        builder.outputs = [BTCTransactionOutput.init(value: amount, address: BTCAddress.init(string: receiverAddress))!]
+        builder.changeAddress = BTCAddress.init(string: senderAddress.string)
+        
+        return try builder.buildTransaction().transaction.data
+    }
+}
+

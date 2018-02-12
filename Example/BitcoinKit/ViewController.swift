@@ -16,75 +16,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //wallet 1: "region plunge runway punch grocery else raise few churn chalk flock repeat" / 1CLLwNeU9P5n1b1169epuu7z2EoDdaZLsL
-        //wallet 2: "tube improve crater box peanut blanket typical buddy image meadow involve income" / 1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd
+        let wallet = BTCWallet.init(withMnemonic: "wing artist beef palm gospel code grocery goddess zoo great reform sick")!
         
+        NSLog("Created new wallet with mnemonic: %@", wallet.mnemonic ?? "-")
+        NSLog("Created new wallet with address: %@", wallet.address)
         
-        let mnemonic = BitcoinMnemonic.init(withRepresentation: "region plunge runway punch grocery else raise few churn chalk flock repeat")!// BitcoinMnemonic.generateNewMnemonic()
+        let blockchainService = BitcoinBlockchainService.init()
         
-        let stack = BitcoinStackContainer.init(withMnemonic: mnemonic)
+        blockchainService.getWalletBallance(wallet) { (ballance, error) in
+            
+            NSLog("Wallet ballance: %@", ballance?.representation ?? "-")
+        }
         
-        let wallet = stack.deriverDefaultWallet()!
-        
-        NSLog("Wallet: %@", wallet.address)
-        
-//        self.blockchainService.getWalletBallance(wallet) { (ballance, nil) in
-//            
-//            NSLog("Ballance: %@", ballance!.representation)
-//            
-//            self.blockchainService.transactionBuilder.buildTransaction(for: BitcoinAmount.init(withFormattedValue: 0.001)!,
-//                                                                       to: BitcoinWallet.init(withAddress: "1Hzh13B8e7FGUkzWxFqZnauJSv51T2Gysd"),
-//                                                                       from: wallet,
-//                                                                       fee: BitcoinAmount.init(withFormattedValue: 0.001)!)
-//            { [weak self] (result, error) in
-//                
-//                if let transaction = result {
-//                    
-//                    NSLog("Transaction builded!")
-//                    
-//                    self?.blockchainService.broadcastTransaction(transaction, completition: { (error) in
-//                        
-//                        NSLog("Transaction pushed!")
-//                    })
-//                }
-//            }
-//        }
-        
-        
-
-//        NSLog("Mnemonic generated: %@", mnemonic.representation)
+//        blockchainService.broadcastTransaction(from: wallet,
+//                                               to: BTCWallet.createNewWallet(),
+//                                               amount: BitcoinAmount.init(withFormattedValue: 0.1)!,
+//                                               fee: BitcoinAmount.init(withFormattedValue: 0.0001)!) { (error) in
 //
-//        let seed = BitcoinSeed.init(withMnemonic: mnemonic)
-//
-//        NSLog("Seed generated: %@", seed.representation)
-//
-//        let masterChain = BitcoinKeychain.init(withSeed: seed)
-//
-//        NSLog("Root private key:", masterChain.extendedKeyPair.privateKey.representation)
-//
-//        if let keyPair = masterChain.getDerivedKeyPair(index: 1) {
-//
-//            if let wallet = BitcoinWallet.init(withKeyPair: keyPair) {
-//
-//                NSLog("Wallet address: %@", wallet.address)
-//
-//                self.btcService.getWalletBallance(wallet) { (ballance, error) in
-//                    NSLog("Wallet ballance: %@", ballance!.representation)
-//                }
-//
-//                self.btcService.getWalletTransactions(wallet, offset: 0, count: 10) { (transactions, error) in
-//
-//                    NSLog("Transactions loaded:")
-//
-//                    transactions?.forEach({ (transaction) in
-//
-//                        let isIncoming = transaction.isOutgoingForAddress(wallet.address)!
-//                        let amount = transaction.getAmountForAddress(wallet.address)!
-//
-//                        NSLog("%@ %@ at %@ / %@", isIncoming ? "+" : "-", amount.representation, String.init(describing: transaction.time), transaction.transactionHash)
-//                    })
-//                }
-//            }
 //        }
     }
 }
