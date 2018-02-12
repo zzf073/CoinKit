@@ -16,13 +16,7 @@ public class BTCWallet: Wallet {
     
     public static func createNewWallet() -> Wallet {
         
-        let entropyData = BTCRandomDataWithLength(16) as Data
-
-        guard let mnemonic = BTCMnemonic.init(entropy: entropyData, password: nil, wordListType: .english) else {
-            fatalError("Unable to create mnemonic for new wallet")
-        }
-        
-        guard let wallet = BTCWallet.init(withMnemonic: (mnemonic.words as! [String]).joined(separator: " ")) else {
+        guard let wallet = BTCWallet.init(withMnemonic: MnemonicGenerator.generate()) else {
             fatalError("Unable to create new wallet with mnemonic")
         }
         

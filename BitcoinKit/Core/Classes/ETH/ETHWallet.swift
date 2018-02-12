@@ -16,7 +16,7 @@ class ETHWallet: Wallet {
     
     static func createNewWallet() -> Wallet {
         
-        guard let wallet = ETHWallet.init(withMnemonic: Account.randomMnemonic().mnemonicPhrase) else {
+        guard let wallet = ETHWallet.init(withMnemonic: MnemonicGenerator.generate()) else {
             fatalError("Unable to create new wallet")
         }
         
