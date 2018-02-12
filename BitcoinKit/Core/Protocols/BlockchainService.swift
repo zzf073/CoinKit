@@ -14,6 +14,8 @@ public typealias BroadcastTransactionCompletition = (Error?) -> Void
 
 public protocol BlockchainService {
     
+    init()
+    
     func getWalletBallance(_ wallet:Wallet, withCompletition completition:@escaping GetWalletBallanceCompletition)
     func getWalletTransactions(_ wallet:Wallet, offset:UInt, count:UInt, withCompletition completition:@escaping GetWalletTransactionsCompletition)
     func getTransactionFee(_ completition:GetTransactionFeeCompletition)

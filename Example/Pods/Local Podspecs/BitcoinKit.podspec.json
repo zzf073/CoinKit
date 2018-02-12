@@ -23,7 +23,10 @@
     "SWIFT_VERSION": "4"
   },
   "frameworks": "AVFoundation",
-  "vendored_frameworks": "BitcoinKit/Frameworks/CoreBitcoin.framework",
+  "vendored_frameworks": [
+    "BitcoinKit/Frameworks/CoreBitcoin.framework",
+    "BitcoinKit/Frameworks/ethers.framework"
+  ],
   "dependencies": {
     "AFNetworking": [
 

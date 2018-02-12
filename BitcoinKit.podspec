@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
   
   s.framework = 'AVFoundation'
-  s.vendored_frameworks = 'BitcoinKit/Frameworks/CoreBitcoin.framework'
+  s.vendored_frameworks = 'BitcoinKit/Frameworks/CoreBitcoin.framework', 'BitcoinKit/Frameworks/ethers.framework'
   
   s.dependency 'AFNetworking'
 end
