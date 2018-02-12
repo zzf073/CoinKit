@@ -10,7 +10,7 @@ import CoreBitcoin
 import Foundation
 import AFNetworking
 
-fileprivate class BlockChainInfoTransaction:BitcoinTransaction {
+fileprivate class BlockChainInfoTransaction:BTCTransaction {
     
     fileprivate convenience init?(withDictionary dictionary:[String:Any]) {
         
@@ -149,7 +149,7 @@ public class BTCBlockchainService: BlockchainService {
     }
     
     public func getTransactionFee(_ completition: (Amount?, Error?) -> Void) {
-        completition(BitcoinAmount.init(withValue: BTCTransaction.init().estimatedFee), nil)
+        completition(BitcoinAmount.init(withValue: CoreBitcoin.BTCTransaction.init().estimatedFee), nil)
     }
     
     public func broadcastTransaction(from senderWallet: Wallet, to receiverWallet: Wallet, amount: Amount, fee: Amount, completition: @escaping BroadcastTransactionCompletition) {

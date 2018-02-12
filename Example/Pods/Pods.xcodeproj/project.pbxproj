@@ -8,82 +8,83 @@
 
 /* Begin PBXBuildFile section */
 		00C05031BBA5BA48A00FE41348F41BDA /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 996D38C17E48CD16703CD9A31F9F6EC7 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08AECB6D516165F48B17303DE3C1ACC1 /* BitcoinKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 193E24186000B208C96BD421FED6F8C9 /* BitcoinKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D1FFD30267C0776FD3E88EFF51E312F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B775F2CB1A9FB265DAF8C6F05776A69E /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F6713D3595D42DA0B95C600FE937DA8 /* Keypair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF8E1CFECA3DBD6CA857C3EE6AC6B9 /* Keypair.swift */; };
+		135D99B9F7A71092EBA8BA6A862A6C40 /* ETHBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C00A9C029B07129AD4F90638D0851 /* ETHBlockchainService.swift */; };
 		140F458AB7312414FC423FEED70A3733 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C171634A123A0E7FC39F44FA05D2 /* UIActivityIndicatorView+AFNetworking.m */; };
 		1886BE0D0A384FE577F8DA7704A4F467 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */; };
-		19AF238E8AED8B3EDDE0B689D9EF5CB2 /* BitcoinKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 193E24186000B208C96BD421FED6F8C9 /* BitcoinKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA9E983999981D44A3E6D8281DC546D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F56A9ECC980D72382EAC08B59664DC /* AVFoundation.framework */; };
 		1E2A6D057E20BE8F5ED3E594F7B8C286 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E363399C8F7BCAD4FC7BD1CDBF97CD10 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F7AEAADE5831F0B74CD4EAAF897D63D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */; };
 		29476636EA86BEFC4CB833D3BB7A52D7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B66C0AEBC9F9724A670DCF79BE4531 /* AFURLRequestSerialization.m */; };
 		2B0705CC26A4CBEE32A5A60284AED35B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A39107EEA293C692022DBFA34617CFB0 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F1A0910F2CCB976257F9857AD6E8CD0 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15009F8C2C63A6FDAA5EC5E3A92A7B2F /* CoinType.swift */; };
 		30F0BAE1DBB79BBB6CBD957EA8B89E4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCD96147C91EF29F9A3768E9FC70196 /* MobileCoreServices.framework */; };
 		32076D3DD644045CF79DFFEBB6BFF3F2 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 907EBD05C24D3EC8D81F3A5FEE84121C /* UIButton+AFNetworking.m */; };
-		33ECE70976C90A57D0B6037D04489E35 /* BlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95CE65FACEF7B3F44308EAC824D35C1 /* BlockchainService.swift */; };
+		32DAF85B54BF3D0123DB00B28C07E3E7 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60612669825CECCEA2451C152B018CF6 /* Key.swift */; };
 		34C88657FE7ABE9F833623F94952D253 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 85053C33AB5B93D2852851105AAA32B1 /* UIProgressView+AFNetworking.m */; };
 		35CBB7B255FD8D412AFCECBC4311A847 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AB4088CDD2F5D16F78CD6D995025592E /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BC5FEA4F8C1D90B09061F5D55DBF63F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */; };
 		42AF1BB1ED090CC9E588A463441D09E3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68752E6B357CACDDA30B4E50B0A3C8B6 /* SystemConfiguration.framework */; };
 		4442D8453D210EFC13CFE2CAF862ED1D /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EB9F5DA3051DAC003422E54B3B4A6E9D /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		444C169821231E77DBFCA02F45DE2DC0 /* Keypair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF8E1CFECA3DBD6CA857C3EE6AC6B9 /* Keypair.swift */; };
 		45F802D04B3BE0CAEC586C2F3016027B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 077A1959F6F952532F523B4F8E9B751D /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F04CBDF6C54B220F6AEECEF15264D5 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FDD03D0BE06A3B18AD76D92D8234FBBB /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4ABF5AC9ACF8FE17764D19776DA9D992 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */; };
 		51047C1945103943F70BEADE83725630 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 60FDE8718B3C2608D30D734C8A15D3D3 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52F471218CF4AE5E97642C5372FCC2D4 /* BTCWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5A6EA51DDDB300993526BF32A2D8CE /* BTCWallet.swift */; };
 		5A1D34D104D42B1EE399E23BCD7935A0 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 103EE194B42BE62229AA5C5351E9BFE9 /* AFURLResponseSerialization.m */; };
+		5BDE3A7AD23651937D753EF2180A3483 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D925F960541B12AFACD1C43D6E22C /* Amount.swift */; };
 		613525EFDC61B63E322BE5D8E8DA7A27 /* Pods-BitcoinKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F24B90CD52D7C63C75DEC1AA077C3A /* Pods-BitcoinKit_Tests-dummy.m */; };
-		613B007FD0E1870744DBADFD91380C54 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C09B94F19533FBD391278CB20185D /* AFNetworking.framework */; };
+		63B1CD798BCFDF0EAED27CED97564D17 /* BTCBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A364B177543281E064D94A2A67960 /* BTCBlockchainService.swift */; };
 		649E78B5EA450FABDF5201E31F265FAB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DAA8D29D605736A0994260EEE74150 /* AFNetworkActivityIndicatorManager.m */; };
 		6573AF9ABA59AC8D1F52B07088197F71 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 31421BED59C8FE2DFEFD4457219B946A /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E1C8BBB8AEA763365B6356944D9E3BA /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F537C6FAC32664EACB3D1F468D27582 /* Transaction.swift */; };
+		717A6DA27B8400169DF4E8E06CCBFF03 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922891E3346A62FEDEF351211FFC8A8D /* DataHelpers.swift */; };
 		789D749690B308852115FF20CD982A69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33830637D0C8339613C89B00AE2EF1ED /* CoreGraphics.framework */; };
 		7A112C0F21A62CB6F1AA8D917A6EEA6C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C71DB2632AE2E107C12837E932A8E08 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CE16B1BF75DF396768A0A3CFD968DB1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A8DB58B1DEC0150E36AD843786FF3 /* UIWebView+AFNetworking.m */; };
 		82D554EC9FB9A62D935B6555325F5898 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD302478E08460B3EA59AA9C369F87A /* Security.framework */; };
-		87B7B2B0196FDD7C8B32130283A73365 /* ETHWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213ECF0CC2132CC19E4C4724824C7ED2 /* ETHWallet.swift */; };
 		8B19F9E95A6F9A7CA40D137B5F4DEF74 /* Pods-BitcoinKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F125065A2E405C2FE1D1738140AD28 /* Pods-BitcoinKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C0ADA4E71EFCE0390F0387EF7A5FC81 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F56A9ECC980D72382EAC08B59664DC /* AVFoundation.framework */; };
-		8DCBD888911754B461E33EBEDC7A0516 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922891E3346A62FEDEF351211FFC8A8D /* DataHelpers.swift */; };
+		91A87B93B72CFE264F5D95FC73C81450 /* Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16052AC9514ECAF52F24367D12F7351 /* Representable.swift */; };
 		9264BD69AFA8EE74F0D7F0EBD74F762F /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1B9153633729F35C67949C7006B7A /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93DFC0CC12E763AE770017349EE009D1 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 456884974FCD65674016A0D296E8D846 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9431BF1BC5A51172E1768BCE30C74E3F /* BitcoinAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96E0B3D355EB55433224E32689953C /* BitcoinAmount.swift */; };
 		948458DC0A9308A2D8C018C37FB7BBDD /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 038DE6D856DFAE2F85304D036588D065 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		970CF57D3F4A9AF453492D3D4B2AD075 /* Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16052AC9514ECAF52F24367D12F7351 /* Representable.swift */; };
-		9D609C49F41994B35A81EC5F1692742C /* BroadcastableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D98EBBF3B3F632CF15F205D39A3AE7 /* BroadcastableTransaction.swift */; };
+		94F8BCAEFBA142C3EEFA264C65961EE1 /* BTCTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF04496BEF587B4AD14ED6E56DB7CE9 /* BTCTransaction.swift */; };
+		95F11FE415050B12FDC4EDCBB0E796A2 /* BitcoinAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9232FA81C5393ED1B82CDCCCC9D91977 /* BitcoinAmount.swift */; };
+		98A759EBA19113718A63059951986571 /* BitcoinKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AED072A4A8D2D267BB383BD0276ADB /* BitcoinKit-dummy.m */; };
 		A296B5F412DE5C1F0A353889431A1B4C /* Pods-BitcoinKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 173EB85556B8AA3C7E0EF099E165E48C /* Pods-BitcoinKit_Example-dummy.m */; };
 		A3591DEDA776B48C026E7F9144981E58 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEB3CDE859F3F412940D15AA031037 /* AFAutoPurgingImageCache.m */; };
 		A398D63C8DED664D99A864D79881A13C /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC24D481320415EB9DB59C7033DAC26 /* AFImageDownloader.m */; };
 		A8C297643282E0CF5E7DF9CB6E23A0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */; };
-		AAFA48B55F5B45AA54596326C7D95525 /* BitcoinKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AED072A4A8D2D267BB383BD0276ADB /* BitcoinKit-dummy.m */; };
 		AE976B0E8E3DD81E4F49DBEF19D3C0AD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 434E574D60CF3205EB86C49EB8453D2E /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDAFE16F1C06EFAE434D84600766A8 /* UIRefreshControl+AFNetworking.m */; };
-		B7B1BBEDAB0799179AFFE84555C0994E /* BitcoinTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E0F3F7F78F0F2F781BC74075BA88 /* BitcoinTransaction.swift */; };
-		BA485A6A3C6954F96E65E17F14CA69A1 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60612669825CECCEA2451C152B018CF6 /* Key.swift */; };
-		BF003F5CCCC34744AB65F8B7084A3225 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15009F8C2C63A6FDAA5EC5E3A92A7B2F /* CoinType.swift */; };
 		C19DBEE54A5D0930B364BE9B3F4B5CAB /* Pods-BitcoinKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32683A384D6044DF225E21642A57EA01 /* Pods-BitcoinKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C25A2A9161EC6A07649FC360DC5DC69E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F537C6FAC32664EACB3D1F468D27582 /* Transaction.swift */; };
+		C9746B996F929F84B4E92914111B35FE /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201AC241767D889C9179C55ABB8DD78 /* Wallet.swift */; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EECF143AE392C1D26B1C57DFCCC39E7E /* AFSecurityPolicy.m */; };
 		CF287829627F26B2EB4382B897D06A0E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A189FDEF0AD08BC5DC357020B8DB5A /* AFNetworking-dummy.m */; };
-		CF7210625FEF7F8C3A0C4533D570A54B /* BTCWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA36BD60E0A639D707F59E92B4560001 /* BTCWallet.swift */; };
-		D14C9250A6CCA87DA14D6C4B4FF0B5B5 /* BTCBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C850D70976A3D629AD4FD59F833C4 /* BTCBlockchainService.swift */; };
 		D4E80BD7EAAB83200183110578A80591 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5EF98E2B153C6459F4BC74A2940581 /* AFURLSessionManager.m */; };
+		D944B69511650AD2466A2A006563054A /* ETHWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBF20D226ADC75F6F692985B8360FF /* ETHWallet.swift */; };
 		DD887A93A200A87A51B3D00BD1B80D20 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F42B01C0184F7993752BA21574CFB4 /* AFNetworkReachabilityManager.m */; };
 		E23B9A6F533461CB33C0FA6FB59E3AB2 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 87463A8F055EEE85DD10593D0C8721B2 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAF16633DB3C992CF975BE4A2932D41C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73950156966D6FB93DC14CBF7F3326A6 /* AFHTTPSessionManager.m */; };
-		EDDED04C9B69C132E6B858EC1E240D49 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201AC241767D889C9179C55ABB8DD78 /* Wallet.swift */; };
 		F1CAA2EBDDFF558DEF98684F2479A7AF /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 43581AD63883CAA415A71F817EED5D51 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2D899C7AA0D7FC20160091BB9D31CF3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E287540F6AAFBD6834BFA37866AE26DA /* UIImageView+AFNetworking.m */; };
 		F84DD74BB7F612DE372F8C051420DF72 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F05638D4877C1C9F1AAC3E348D5C7D70 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC674B249CDB4F7832131388F5034F25 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D925F960541B12AFACD1C43D6E22C /* Amount.swift */; };
+		FACBCC78D156623AAFFA075BA4F5CA49 /* BroadcastableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D98EBBF3B3F632CF15F205D39A3AE7 /* BroadcastableTransaction.swift */; };
+		FD9115D21BA5184CEAA0208663357BA8 /* BlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95CE65FACEF7B3F44308EAC824D35C1 /* BlockchainService.swift */; };
 		FEF6EACE962EAE70E2EAC5F3C83EF7C8 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = E06C4D570ABCF18D8095B9111D3D3F98 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFF014F19BAF9845763487943D6D7321 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C09B94F19533FBD391278CB20185D /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C1B0710D1EF38D002AD24D796F08A18F /* PBXContainerItemProxy */ = {
+		12C41B4E41CE684E0E1EE93CD3368BE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CF671F7E57B92905F1CC91D036D6B4A7;
 			remoteInfo = AFNetworking;
 		};
-		C7D81A3A27D2B12CFFA8FAC02D6ADFEF /* PBXContainerItemProxy */ = {
+		C1B0710D1EF38D002AD24D796F08A18F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -94,7 +95,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 47D561CD1360B2D586F3125B8AEAE682;
+			remoteGlobalIDString = EE5DB0D6886A9D1A1CC1937AF182CD26;
 			remoteInfo = BitcoinKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -108,13 +109,13 @@
 		0920DE0D3408173E9BECC1E660F96D81 /* Pods-BitcoinKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BitcoinKit_Example.modulemap"; sourceTree = "<group>"; };
 		0AA1B9153633729F35C67949C7006B7A /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		0D2D3F6D3E1A81FC7366F8E469CE478C /* Pods_BitcoinKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BitcoinKit_Tests.framework; path = "Pods-BitcoinKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBF20D226ADC75F6F692985B8360FF /* ETHWallet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ETHWallet.swift; sourceTree = "<group>"; };
 		103EE194B42BE62229AA5C5351E9BFE9 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		15009F8C2C63A6FDAA5EC5E3A92A7B2F /* CoinType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoinType.swift; path = BitcoinKit/Core/CoinType.swift; sourceTree = "<group>"; };
 		16B66C0AEBC9F9724A670DCF79BE4531 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		173EB85556B8AA3C7E0EF099E165E48C /* Pods-BitcoinKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BitcoinKit_Example-dummy.m"; sourceTree = "<group>"; };
 		17418EFAE45AE8CFE38E2E56305E649A /* Pods-BitcoinKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BitcoinKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		193E24186000B208C96BD421FED6F8C9 /* BitcoinKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BitcoinKit-umbrella.h"; sourceTree = "<group>"; };
-		213ECF0CC2132CC19E4C4724824C7ED2 /* ETHWallet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ETHWallet.swift; sourceTree = "<group>"; };
 		23D98EBBF3B3F632CF15F205D39A3AE7 /* BroadcastableTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BroadcastableTransaction.swift; sourceTree = "<group>"; };
 		2C2DA171981A281746664EB998AA5566 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D43272D34B57A20EE8089B0C55C4B /* Pods-BitcoinKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BitcoinKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		6F537C6FAC32664EACB3D1F468D27582 /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		73950156966D6FB93DC14CBF7F3326A6 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		766A8DB58B1DEC0150E36AD843786FF3 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		79A9E0F3F7F78F0F2F781BC74075BA88 /* BitcoinTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitcoinTransaction.swift; sourceTree = "<group>"; };
 		7D96AE67E909EBB39887FB7C5E9FA363 /* Pods-BitcoinKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BitcoinKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7F5FA7F6AF2C4557961DE88D85DFCC12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7FEBEAD524FBA9CB3333D35635D65A03 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
@@ -155,13 +155,13 @@
 		8D1C763D6CC530EF93E83730BC0840D3 /* Pods-BitcoinKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BitcoinKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		907EBD05C24D3EC8D81F3A5FEE84121C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		922891E3346A62FEDEF351211FFC8A8D /* DataHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
+		9232FA81C5393ED1B82CDCCCC9D91977 /* BitcoinAmount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitcoinAmount.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9452C4831174919CE0D1BD055DF99B6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		985D925F960541B12AFACD1C43D6E22C /* Amount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		98A189FDEF0AD08BC5DC357020B8DB5A /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		996D38C17E48CD16703CD9A31F9F6EC7 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		9B5EF98E2B153C6459F4BC74A2940581 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		9B96E0B3D355EB55433224E32689953C /* BitcoinAmount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitcoinAmount.swift; sourceTree = "<group>"; };
 		A39107EEA293C692022DBFA34617CFB0 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		AA6B7D690CF7C70539797B04B1CB5486 /* BitcoinKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BitcoinKit.modulemap; sourceTree = "<group>"; };
 		AB4088CDD2F5D16F78CD6D995025592E /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
@@ -172,15 +172,16 @@
 		B775F2CB1A9FB265DAF8C6F05776A69E /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		B95CE65FACEF7B3F44308EAC824D35C1 /* BlockchainService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BlockchainService.swift; sourceTree = "<group>"; };
 		BAEEB3CDE859F3F412940D15AA031037 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
-		BB0C850D70976A3D629AD4FD59F833C4 /* BTCBlockchainService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BTCBlockchainService.swift; sourceTree = "<group>"; };
 		C0BED648CADDA259928B9414AA3C9D5F /* Pods-BitcoinKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BitcoinKit_Tests-resources.sh"; sourceTree = "<group>"; };
 		C16052AC9514ECAF52F24367D12F7351 /* Representable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Representable.swift; sourceTree = "<group>"; };
+		C52A364B177543281E064D94A2A67960 /* BTCBlockchainService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BTCBlockchainService.swift; sourceTree = "<group>"; };
 		C7B0A34C1381A88DA02BB110E654332A /* Pods_BitcoinKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BitcoinKit_Example.framework; path = "Pods-BitcoinKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F125065A2E405C2FE1D1738140AD28 /* Pods-BitcoinKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BitcoinKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		D762993A1FEB07BF9340369430788645 /* Pods-BitcoinKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BitcoinKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D9BE5D45C038603640D48874DC389E0F /* BitcoinKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BitcoinKit-prefix.pch"; sourceTree = "<group>"; };
 		DA4D40A7134499C6D84527360C19111A /* BitcoinKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BitcoinKit.framework; path = BitcoinKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3C9F2D646389C8CB85FD8921B0ECE9 /* Pods-BitcoinKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BitcoinKit_Example-resources.sh"; sourceTree = "<group>"; };
+		DE9C00A9C029B07129AD4F90638D0851 /* ETHBlockchainService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ETHBlockchainService.swift; sourceTree = "<group>"; };
 		E06C4D570ABCF18D8095B9111D3D3F98 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 		E1D651E65BBC0F4C6C02CD6DB8698284 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E201AC241767D889C9179C55ABB8DD78 /* Wallet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
@@ -188,18 +189,29 @@
 		E363399C8F7BCAD4FC7BD1CDBF97CD10 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		E6E0C171634A123A0E7FC39F44FA05D2 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		E89EC424D1FD8A8BD78D44402F52B68A /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethers.framework; path = BitcoinKit/Frameworks/ethers.framework; sourceTree = "<group>"; };
-		EA36BD60E0A639D707F59E92B4560001 /* BTCWallet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BTCWallet.swift; sourceTree = "<group>"; };
 		EB9F5DA3051DAC003422E54B3B4A6E9D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		EBF04496BEF587B4AD14ED6E56DB7CE9 /* BTCTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BTCTransaction.swift; sourceTree = "<group>"; };
 		ECCD96147C91EF29F9A3768E9FC70196 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		EECF143AE392C1D26B1C57DFCCC39E7E /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		F05638D4877C1C9F1AAC3E348D5C7D70 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		F7617E4141049E867B695D99457B2D51 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
 		F8F56A9ECC980D72382EAC08B59664DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FD5A6EA51DDDB300993526BF32A2D8CE /* BTCWallet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BTCWallet.swift; sourceTree = "<group>"; };
 		FDD03D0BE06A3B18AD76D92D8234FBBB /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		FFD302478E08460B3EA59AA9C369F87A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B9798E9983F0AAA84021E4AC2ED2614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF014F19BAF9845763487943D6D7321 /* AFNetworking.framework in Frameworks */,
+				1CA9E983999981D44A3E6D8281DC546D /* AVFoundation.framework in Frameworks */,
+				1F7AEAADE5831F0B74CD4EAAF897D63D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F6B4C7A92BEC79C9D4990CA668E77F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,16 +232,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A88E4B3981C1F39D3C462B9376423E08 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				613B007FD0E1870744DBADFD91380C54 /* AFNetworking.framework in Frameworks */,
-				8C0ADA4E71EFCE0390F0387EF7A5FC81 /* AVFoundation.framework in Frameworks */,
-				4ABF5AC9ACF8FE17764D19776DA9D992 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D15A4EC81928A13F91FE48015283445B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,16 +243,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0200F5DDD4576B07E08CE4C7AAACE9FC /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				B3A4D9A9F2847406B13C7817671832C9 /* BTC */,
-				4132F00585670107619D3574F5E23A83 /* ETH */,
-			);
-			name = Classes;
-			path = BitcoinKit/Core/Classes;
-			sourceTree = "<group>";
-		};
 		1A07327AF4A3A563431083D121C30C43 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,13 +286,26 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		4132F00585670107619D3574F5E23A83 /* ETH */ = {
+		40A61A86C1618D8B585CEFF174035962 /* ETH */ = {
 			isa = PBXGroup;
 			children = (
-				213ECF0CC2132CC19E4C4724824C7ED2 /* ETHWallet.swift */,
+				DE9C00A9C029B07129AD4F90638D0851 /* ETHBlockchainService.swift */,
+				0FCBF20D226ADC75F6F692985B8360FF /* ETHWallet.swift */,
 			);
 			name = ETH;
 			path = ETH;
+			sourceTree = "<group>";
+		};
+		58C441F8E2D693B7D5DE570C28A6C9D7 /* BTC */ = {
+			isa = PBXGroup;
+			children = (
+				9232FA81C5393ED1B82CDCCCC9D91977 /* BitcoinAmount.swift */,
+				C52A364B177543281E064D94A2A67960 /* BTCBlockchainService.swift */,
+				EBF04496BEF587B4AD14ED6E56DB7CE9 /* BTCTransaction.swift */,
+				FD5A6EA51DDDB300993526BF32A2D8CE /* BTCWallet.swift */,
+			);
+			name = BTC;
+			path = BTC;
 			sourceTree = "<group>";
 		};
 		641BDD347DE7B8BB81D6CA5727C6EC5A /* Pods */ = {
@@ -351,11 +356,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		76391F6EEE4F34ACBCB9FF825E69CE50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58C441F8E2D693B7D5DE570C28A6C9D7 /* BTC */,
+				40A61A86C1618D8B585CEFF174035962 /* ETH */,
+			);
+			name = Classes;
+			path = BitcoinKit/Core/Classes;
+			sourceTree = "<group>";
+		};
 		774829CC474B996091E5F708ECDD5985 /* BitcoinKit */ = {
 			isa = PBXGroup;
 			children = (
 				15009F8C2C63A6FDAA5EC5E3A92A7B2F /* CoinType.swift */,
-				0200F5DDD4576B07E08CE4C7AAACE9FC /* Classes */,
+				76391F6EEE4F34ACBCB9FF825E69CE50 /* Classes */,
 				255CAE3CF00B3DC9BC7E9D8F68347656 /* Frameworks */,
 				A3F81356F53E728727092F9E344F8970 /* Helpers */,
 				3E92A0E9A8AD5007D0B4332C9CDA88E9 /* Pod */,
@@ -454,18 +469,6 @@
 				1A07327AF4A3A563431083D121C30C43 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B3A4D9A9F2847406B13C7817671832C9 /* BTC */ = {
-			isa = PBXGroup;
-			children = (
-				9B96E0B3D355EB55433224E32689953C /* BitcoinAmount.swift */,
-				79A9E0F3F7F78F0F2F781BC74075BA88 /* BitcoinTransaction.swift */,
-				BB0C850D70976A3D629AD4FD59F833C4 /* BTCBlockchainService.swift */,
-				EA36BD60E0A639D707F59E92B4560001 /* BTCWallet.swift */,
-			);
-			name = BTC;
-			path = BTC;
 			sourceTree = "<group>";
 		};
 		C015C5E223184310A507F6F6D795AB1F /* UIKit */ = {
@@ -601,35 +604,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F36AFBACB499A90416EC1C7746383116 /* Headers */ = {
+		EB1EB1678A6BA7E63280F1A1F726C0B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19AF238E8AED8B3EDDE0B689D9EF5CB2 /* BitcoinKit-umbrella.h in Headers */,
+				08AECB6D516165F48B17303DE3C1ACC1 /* BitcoinKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		47D561CD1360B2D586F3125B8AEAE682 /* BitcoinKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D73659A3768061CAC1E68B9DD965B9E /* Build configuration list for PBXNativeTarget "BitcoinKit" */;
-			buildPhases = (
-				2A298179E2146BF50870D7AFE7E91119 /* Sources */,
-				A88E4B3981C1F39D3C462B9376423E08 /* Frameworks */,
-				F36AFBACB499A90416EC1C7746383116 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				524F9DAA8B0C1CF471F621086B80C49F /* PBXTargetDependency */,
-			);
-			name = BitcoinKit;
-			productName = BitcoinKit;
-			productReference = DA4D40A7134499C6D84527360C19111A /* BitcoinKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		4FF5B4F39C424A8B7553DB45E02E9521 /* Pods-BitcoinKit_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B8540F8F615B12E2432BE331BA82C1 /* Build configuration list for PBXNativeTarget "Pods-BitcoinKit_Example" */;
@@ -683,6 +668,24 @@
 			productReference = 0D2D3F6D3E1A81FC7366F8E469CE478C /* Pods_BitcoinKit_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EE5DB0D6886A9D1A1CC1937AF182CD26 /* BitcoinKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 031F878A3A44EC9B859F8B6F63FF0FC4 /* Build configuration list for PBXNativeTarget "BitcoinKit" */;
+			buildPhases = (
+				4300108857A97A33AF454BE56CFFC67E /* Sources */,
+				0B9798E9983F0AAA84021E4AC2ED2614 /* Frameworks */,
+				EB1EB1678A6BA7E63280F1A1F726C0B4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CCE92DF15A2F9A7CA2291027A5133F6 /* PBXTargetDependency */,
+			);
+			name = BitcoinKit;
+			productName = BitcoinKit;
+			productReference = DA4D40A7134499C6D84527360C19111A /* BitcoinKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -705,7 +708,7 @@
 			projectRoot = "";
 			targets = (
 				CF671F7E57B92905F1CC91D036D6B4A7 /* AFNetworking */,
-				47D561CD1360B2D586F3125B8AEAE682 /* BitcoinKit */,
+				EE5DB0D6886A9D1A1CC1937AF182CD26 /* BitcoinKit */,
 				4FF5B4F39C424A8B7553DB45E02E9521 /* Pods-BitcoinKit_Example */,
 				E3F64730AB73B1E6A7006E9807EB1339 /* Pods-BitcoinKit_Tests */,
 			);
@@ -713,26 +716,27 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A298179E2146BF50870D7AFE7E91119 /* Sources */ = {
+		4300108857A97A33AF454BE56CFFC67E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC674B249CDB4F7832131388F5034F25 /* Amount.swift in Sources */,
-				9431BF1BC5A51172E1768BCE30C74E3F /* BitcoinAmount.swift in Sources */,
-				AAFA48B55F5B45AA54596326C7D95525 /* BitcoinKit-dummy.m in Sources */,
-				B7B1BBEDAB0799179AFFE84555C0994E /* BitcoinTransaction.swift in Sources */,
-				33ECE70976C90A57D0B6037D04489E35 /* BlockchainService.swift in Sources */,
-				9D609C49F41994B35A81EC5F1692742C /* BroadcastableTransaction.swift in Sources */,
-				D14C9250A6CCA87DA14D6C4B4FF0B5B5 /* BTCBlockchainService.swift in Sources */,
-				CF7210625FEF7F8C3A0C4533D570A54B /* BTCWallet.swift in Sources */,
-				BF003F5CCCC34744AB65F8B7084A3225 /* CoinType.swift in Sources */,
-				8DCBD888911754B461E33EBEDC7A0516 /* DataHelpers.swift in Sources */,
-				87B7B2B0196FDD7C8B32130283A73365 /* ETHWallet.swift in Sources */,
-				BA485A6A3C6954F96E65E17F14CA69A1 /* Key.swift in Sources */,
-				0F6713D3595D42DA0B95C600FE937DA8 /* Keypair.swift in Sources */,
-				970CF57D3F4A9AF453492D3D4B2AD075 /* Representable.swift in Sources */,
-				C25A2A9161EC6A07649FC360DC5DC69E /* Transaction.swift in Sources */,
-				EDDED04C9B69C132E6B858EC1E240D49 /* Wallet.swift in Sources */,
+				5BDE3A7AD23651937D753EF2180A3483 /* Amount.swift in Sources */,
+				95F11FE415050B12FDC4EDCBB0E796A2 /* BitcoinAmount.swift in Sources */,
+				98A759EBA19113718A63059951986571 /* BitcoinKit-dummy.m in Sources */,
+				FD9115D21BA5184CEAA0208663357BA8 /* BlockchainService.swift in Sources */,
+				FACBCC78D156623AAFFA075BA4F5CA49 /* BroadcastableTransaction.swift in Sources */,
+				63B1CD798BCFDF0EAED27CED97564D17 /* BTCBlockchainService.swift in Sources */,
+				94F8BCAEFBA142C3EEFA264C65961EE1 /* BTCTransaction.swift in Sources */,
+				52F471218CF4AE5E97642C5372FCC2D4 /* BTCWallet.swift in Sources */,
+				2F1A0910F2CCB976257F9857AD6E8CD0 /* CoinType.swift in Sources */,
+				717A6DA27B8400169DF4E8E06CCBFF03 /* DataHelpers.swift in Sources */,
+				135D99B9F7A71092EBA8BA6A862A6C40 /* ETHBlockchainService.swift in Sources */,
+				D944B69511650AD2466A2A006563054A /* ETHWallet.swift in Sources */,
+				32DAF85B54BF3D0123DB00B28C07E3E7 /* Key.swift in Sources */,
+				444C169821231E77DBFCA02F45DE2DC0 /* Keypair.swift in Sources */,
+				91A87B93B72CFE264F5D95FC73C81450 /* Representable.swift in Sources */,
+				6E1C8BBB8AEA763365B6356944D9E3BA /* Transaction.swift in Sources */,
+				C9746B996F929F84B4E92914111B35FE /* Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,14 +791,14 @@
 		041886D75D9EBB3EF4131F96C36CED19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BitcoinKit;
-			target = 47D561CD1360B2D586F3125B8AEAE682 /* BitcoinKit */;
+			target = EE5DB0D6886A9D1A1CC1937AF182CD26 /* BitcoinKit */;
 			targetProxy = E4F61561301BA39D34F9FA30A6EE2BD6 /* PBXContainerItemProxy */;
 		};
-		524F9DAA8B0C1CF471F621086B80C49F /* PBXTargetDependency */ = {
+		9CCE92DF15A2F9A7CA2291027A5133F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AFNetworking;
 			target = CF671F7E57B92905F1CC91D036D6B4A7 /* AFNetworking */;
-			targetProxy = C7D81A3A27D2B12CFFA8FAC02D6ADFEF /* PBXContainerItemProxy */;
+			targetProxy = 12C41B4E41CE684E0E1EE93CD3368BE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -862,38 +866,6 @@
 			};
 			name = Release;
 		};
-		1D19B6FBC9503E066937A002163540C1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DA582152A83DBCC06498C64D7A31E44 /* BitcoinKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BitcoinKit/BitcoinKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BitcoinKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BitcoinKit/BitcoinKit.modulemap";
-				PRODUCT_NAME = BitcoinKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -953,6 +925,38 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		3743208B4110A6BA79A20CCF87259648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA582152A83DBCC06498C64D7A31E44 /* BitcoinKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BitcoinKit/BitcoinKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BitcoinKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BitcoinKit/BitcoinKit.modulemap";
+				PRODUCT_NAME = BitcoinKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		471863FFFB097D426E5C7EE38ED435EF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1106,7 +1110,7 @@
 			};
 			name = Release;
 		};
-		BB2C69E747A2E004E4DBCEB150A9792C /* Debug */ = {
+		C284069EB462E092453315B8D0D64BD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DA582152A83DBCC06498C64D7A31E44 /* BitcoinKit.xcconfig */;
 			buildSettings = {
@@ -1174,6 +1178,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		031F878A3A44EC9B859F8B6F63FF0FC4 /* Build configuration list for PBXNativeTarget "BitcoinKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C284069EB462E092453315B8D0D64BD0 /* Debug */,
+				3743208B4110A6BA79A20CCF87259648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1206,15 +1219,6 @@
 			buildConfigurations = (
 				630244CD649B8E708B2443E548EC0F25 /* Debug */,
 				175B0A46CECA0B0A3724D41EFBB0E328 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D73659A3768061CAC1E68B9DD965B9E /* Build configuration list for PBXNativeTarget "BitcoinKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB2C69E747A2E004E4DBCEB150A9792C /* Debug */,
-				1D19B6FBC9503E066937A002163540C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

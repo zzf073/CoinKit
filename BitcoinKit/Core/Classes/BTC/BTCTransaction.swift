@@ -1,5 +1,5 @@
 //
-//  BitcoinTransaction.swift
+//  BTCTransaction.swift
 //  AFNetworking
 //
 //  Created by Dmitry on 06.02.2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class BitcoinTransaction: Transaction {
+open class BTCTransaction: Transaction {
     
     public var transactionHash: String
     public var time: Date

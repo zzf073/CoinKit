@@ -23,8 +23,6 @@ public func getBlockchainServiceType(_ coinType:CoinType) -> BlockchainService.T
     
     switch coinType {
     case .BTC: return BTCBlockchainService.self
-    default: break
+    case .ETH: return ETHBlockchainService.self
     }
-    
-    return BTCBlockchainService.self
 }
