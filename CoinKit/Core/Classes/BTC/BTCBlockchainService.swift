@@ -98,7 +98,7 @@ public class BTCBlockchainService: BlockchainService {
         
     }
     
-    public func getWalletBallance(_ wallet: Wallet, withCompletition completition: @escaping GetWalletBallanceCompletition) {
+    public func getWalletBalance(_ wallet: Wallet, withCompletition completition: @escaping GetWalletBalanceCompletition) {
         
         BlockchainAPI.shared.GETPath("/balance", withParams: ["active" : wallet.address]) { (result, error) in
             
@@ -108,9 +108,9 @@ public class BTCBlockchainService: BlockchainService {
                 return
             }
             
-            if let dictionary = (result as? [String:Any])?.first?.value as? [String:Any], let ballance = BlockChainAmount.init(withDictionary: dictionary) {
+            if let dictionary = (result as? [String:Any])?.first?.value as? [String:Any], let balance = BlockChainAmount.init(withDictionary: dictionary) {
                 
-                completition(ballance, nil)
+                completition(balance, nil)
             }
             else {
                 //TODO: Generate error
