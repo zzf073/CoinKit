@@ -1,0 +1,6 @@
+framework module CoinKit {
+  umbrella header "CoinKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

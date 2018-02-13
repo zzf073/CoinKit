@@ -1,11 +1,9 @@
 use_frameworks!
 
-target 'BitcoinKit_Example' do
-  pod 'BitcoinKit', :path => '../'
+target 'CoinKit_Example' do
+  pod 'CoinKit', :path => '../'
 
-  target 'BitcoinKit_Tests' do
+  target 'CoinKit_Tests' do
     inherit! :search_paths
-
-    
   end
 end

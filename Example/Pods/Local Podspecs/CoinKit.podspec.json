@@ -1,0 +1,35 @@
+{
+  "name": "CoinKit",
+  "version": "0.1.0",
+  "summary": "Create cryptocurrency apps easily",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Dmitry/CoinKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dmitry": "d.overchuk@titanium.im"
+  },
+  "source": {
+    "git": "https://github.com/Dmitry/CoinKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CoinKit/Core/**/*",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "4"
+  },
+  "frameworks": "AVFoundation",
+  "vendored_frameworks": [
+    "CoinKit/Frameworks/CoreBitcoin.framework",
+    "CoinKit/Frameworks/ethers.framework"
+  ],
+  "dependencies": {
+    "AFNetworking": [
+
+    ]
+  }
+}
