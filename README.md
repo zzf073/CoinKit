@@ -2,6 +2,7 @@
 
 Features:
 * Written in Swift, wrapping well-tested and production ready libs such as `CoreBitcoin`, `ethers`, etc.
+* Working with different coins and blockchain services using unified protocols
 * Generating and validating `BIP39` mnemonic
 * Creating new wallets, or restoring existed ones with `mnemonic` or `private key`
 * Receiving wallet info from its blockchain (`balance`, `transactions`, `fees`)
