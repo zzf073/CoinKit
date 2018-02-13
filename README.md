@@ -1,6 +1,11 @@
 # CoinKit
 
-  CoinKit can create new and restore existing wallets with mnemonic or private key, receive wallet info from its blockchain such as balance, transactions, fees, etc, and sign and broadcast transactions as well.
+Features:
+* Written in Swift, wrapping well-tested and production ready libs such as `CoreBitcoin`, `ethers`, etc.
+* Generating and validating `BIP39` mnemonic
+* Creating new wallets, or restoring existed ones with `mnemonic` or `private key`
+* Receiving wallet info from its blockchain (`balance`, `transactions`, `fees`)
+* Signing and broadcasting `transactions`
 
 ## Example
 
