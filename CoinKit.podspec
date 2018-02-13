@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CoinKit'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'Awesome toolkit for working with cryptocurrencies in Swift'
   s.description      = <<-DESC
   CoinKit can create new and restore existing wallets with mnemonic or private key, receive wallet info from its blockchain such as balance, transactions, fees, etc, and sign and broadcast transactions as well.
