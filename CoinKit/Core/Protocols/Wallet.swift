@@ -10,7 +10,7 @@ import Foundation
 public protocol Wallet {
     
     var address:String {get}
-    var keypair:KeyPair? {get}
+    var privateKey:Key? {get}
     var mnemonic:String? {get}
     
     static func createNewWallet() -> Wallet
@@ -18,5 +18,5 @@ public protocol Wallet {
     init(withAddress address:String)
     
     init?(withMnemonic mnemonic:String)
-    init?(withKeyPair keyPair:KeyPair)
+    init?(withPrivateKey key:Key)
 }

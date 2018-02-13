@@ -202,7 +202,7 @@ fileprivate class BitcoinTransactionBuilder:NSObject  {
             
             var data:Data?
             
-            if let privateKeyData = senderWallet.keypair?.privateKey.data {
+            if let privateKeyData = senderWallet.privateKey?.data {
                 
                 do {
                     data = try self.buildTransactionSync(amount: amount.value,

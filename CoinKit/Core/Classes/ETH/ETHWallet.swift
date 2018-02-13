@@ -11,7 +11,7 @@ import ethers
 class ETHWallet: Wallet {
     
     var address: String
-    var keypair: KeyPair?
+    var privateKey: Key?
     var mnemonic: String?
     
     static func createNewWallet() -> Wallet {
@@ -34,22 +34,19 @@ class ETHWallet: Wallet {
             return nil
         }
         
-        let privateKey = Key.init(withData: account.privateKey)
-        let publiKey = Key.init(withData: Data.init())
-        
-        self.init(withKeyPair: KeyPair.init(withPublicKey: publiKey, andPrivateKey: privateKey))
+        self.init(withPrivateKey: Key.init(withData: account.privateKey))
         
         self.mnemonic = mnemonic
     }
     
-    required init?(withKeyPair keyPair: KeyPair) {
+    required init?(withPrivateKey key: Key) {
         
-        guard let account = Account.init(privateKey: keyPair.privateKey.data) else {
+        guard let account = Account.init(privateKey: key.data) else {
             return nil
         }
         
         self.address = account.address.checksumAddress
-        self.keypair = keyPair
+        self.privateKey = key
     }
 }
 

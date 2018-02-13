@@ -11,7 +11,7 @@ import CoreBitcoin
 public class BTCWallet: Wallet {
     
     public var address: String
-    public var keypair: KeyPair?
+    public var privateKey: Key?
     public var mnemonic: String?    
     
     public static func createNewWallet() -> Wallet {
@@ -37,23 +37,17 @@ public class BTCWallet: Wallet {
             return nil
         }
         
-        let publicKey = Key.init(withData: key.publicKey as Data)
-        let privateKey = Key.init(withData: key.privateKey as Data)
-        
-        let keypair = KeyPair.init(withPublicKey: publicKey, andPrivateKey: privateKey)
-        
-        self.init(withKeyPair: keypair)
+        self.init(withPrivateKey: Key.init(withData: key.privateKey as Data))
         
         self.mnemonic = mnemonic
     }
     
-    required public init?(withKeyPair keyPair: KeyPair) {
-        
-        guard let key = BTCKey.init(privateKey: keyPair.privateKey.data) else {
+    public required init?(withPrivateKey key: Key) {
+        guard let btcKey = BTCKey.init(privateKey: key.data) else {
             return nil
         }
         
-        self.address = key.compressedPublicKeyAddress.string
-        self.keypair = keyPair
+        self.address = btcKey.compressedPublicKeyAddress.string
+        self.privateKey = key
     }
 }

@@ -14,31 +14,52 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Create and validate mnemonic
+        
         let mnemonic = MnemonicGenerator.generate()
         NSLog("Generated new mnemonic: %@", mnemonic)
         
-        let btcWallet = getWalletType(.BTC).init(withMnemonic: mnemonic)!
-        NSLog("Created new BTC wallet: %@", btcWallet.address)
-        
-        let ethWallet = getWalletType(.ETH).init(withMnemonic: mnemonic)!
-        NSLog("Created new BTC wallet: %@", ethWallet.address)
-        
-        let btcService = getBlockchainServiceType(.BTC).init()
-        
-        btcService.getWalletBalance(btcWallet) { (balance, error) in
-            
-            NSLog("%@", balance!.representation)
+        if !MnemonicGenerator.validate("some incorrect mnemonic") {
+            //NSLog("Incorrect mnemonic!")
         }
         
-        let newRandomWallet = getWalletType(.BTC).createNewWallet()
+        //Creating new wallets
         
-        btcService.broadcastTransaction(from: btcWallet,
-                                        to: newRandomWallet,
-                                        amount: BitcoinAmount.init(withFormattedValue: 0.1)!, //BTC
-                                        fee: BitcoinAmount.init(withValue: 10000)) //Satoshis
+        let newBTCWallet = getWalletType(.BTC).createNewWallet()
+        NSLog("Created new BTC wallet: %@", newBTCWallet.address)
+        
+        let newETHWallet = getWalletType(.ETH).createNewWallet()
+        NSLog("Created new ETH wallet: %@", newETHWallet.address)
+        
+        
+        //Restoring existed wallets
+        
+        let restoredWallet = getWalletType(.BTC).init(withMnemonic: "believe boost rare popular giggle cave pupil unveil absurd stock scissors erosion")
+        
+        NSLog("Restored wallet address: %@", restoredWallet!.address)
+        NSLog("Restored wallet private key hex: %@", restoredWallet!.privateKey!.representation)
+        
+        //Restoring existed wallets with private key
+        
+        let anotherRestoredWallet = getWalletType(.BTC).init(withPrivateKey: restoredWallet!.privateKey!)
+        
+        NSLog("Another restored wallet address: %@", restoredWallet!.address)
+        
+        //working with blockchain
+        
+        let blockchainService = getBlockchainServiceType(.BTC).init()
+        
+        blockchainService.getWalletBalance(anotherRestoredWallet!) { (balance, error) in
+            NSLog("Wallet balance: %@", balance!.representation)
+        }
+        
+        blockchainService.broadcastTransaction(from: anotherRestoredWallet!,
+                                               to: newBTCWallet,
+                                               amount: BitcoinAmount.init(withFormattedValue: 0.1)!, //BTC
+                                               fee: BitcoinAmount.init(withValue: 10000)) //satoshis
         { (error) in
             
-            if error != nil {
+                                                if error != nil {
                 NSLog("Error broadcasting transaction: %@", error!.localizedDescription)
             }
         }
