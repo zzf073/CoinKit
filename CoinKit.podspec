@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/Dmitry/CoinKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Dmitry' => 'd.overchuk@titanium.im' }
-  s.source           = { :git => 'https://github.com/Dmitry/CoinKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ovrchk/CoinKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
