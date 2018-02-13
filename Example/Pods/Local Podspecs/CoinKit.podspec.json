@@ -1,9 +1,9 @@
 {
   "name": "CoinKit",
-  "version": "0.1.0",
-  "summary": "Create cryptocurrency apps easily",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Dmitry/CoinKit",
+  "version": "1.0.1",
+  "summary": "Awesome toolkit for working with cryptocurrencies in Swift",
+  "description": "CoinKit can create new and restore existing wallets with mnemonic or private key, receive wallet info from its blockchain such as balance, transactions, fees, etc, and sign and broadcast transactions as well.",
+  "homepage": "https://github.com/ovrchk/CoinKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "Dmitry": "d.overchuk@titanium.im"
   },
   "source": {
-    "git": "https://github.com/Dmitry/CoinKit.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/ovrchk/CoinKit.git",
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "8.0"

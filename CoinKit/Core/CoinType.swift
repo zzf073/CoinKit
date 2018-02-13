@@ -20,9 +20,15 @@ public func getWalletType(_ coinType:CoinType) -> Wallet.Type {
 
 
 public func getBlockchainServiceType(_ coinType:CoinType) -> BlockchainService.Type {
-    
     switch coinType {
     case .BTC: return BTCBlockchainService.self
     case .ETH: return ETHBlockchainService.self
+    }
+}
+
+public func getAmountType(_ coinType:CoinType) -> Amount.Type {
+    switch coinType {
+    case .BTC: return BTCAmount.self
+    case .ETH: return ETHAmount.self
     }
 }

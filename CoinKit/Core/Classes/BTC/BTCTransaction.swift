@@ -45,13 +45,13 @@ open class BTCTransaction: Transaction {
     
     public func getAmountForAddress(_ address: String) -> Amount? {
         
-        var value:Int64 = 0
+        var value = 0.0
         
         self.outputAddresses.forEach { (outputAddress) in
             
             if outputAddress == address {
                 
-                value += self.outputAmounts[self.outputAddresses.index(of: outputAddress)!].value
+                value += self.outputAmounts[self.outputAddresses.index(of: outputAddress)!].originalValue
             }
         }
         
@@ -59,11 +59,11 @@ open class BTCTransaction: Transaction {
             
             if inputAddress == address {
                 
-                value += self.inputAmounts[self.inputAddresses.index(of: inputAddress)!].value
+                value += self.inputAmounts[self.inputAddresses.index(of: inputAddress)!].originalValue
             }
         }
         
-        return BitcoinAmount.init(withValue: value)
+        return BTCAmount.init(withOriginalValue: value)
     }
     
     public func isOutgoingForAddress(_ address: String) -> Bool? {

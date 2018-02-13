@@ -14,6 +14,10 @@ class ETHWallet: Wallet {
     var privateKey: Key?
     var mnemonic: String?
     
+    public var coinType: CoinType {
+        return CoinType.ETH
+    }
+    
     static func createNewWallet() -> Wallet {
         
         guard let wallet = ETHWallet.init(withMnemonic: MnemonicGenerator.generate()) else {

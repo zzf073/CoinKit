@@ -9,6 +9,8 @@ import Foundation
 
 public protocol Wallet {
     
+    var coinType:CoinType {get}
+    
     var address:String {get}
     var privateKey:Key? {get}
     var mnemonic:String? {get}

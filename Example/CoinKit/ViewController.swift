@@ -55,8 +55,8 @@ class ViewController: UIViewController {
         
         blockchainService.broadcastTransaction(from: anotherRestoredWallet!,
                                                to: newBTCWallet,
-                                               amount: BitcoinAmount.init(withFormattedValue: 0.1)!, //BTC
-                                               fee: BitcoinAmount.init(withValue: 10000)) //satoshis
+                                               amount: getAmountType(.BTC).init(withFormattedValue: 0.1)!, //BTC
+                                               fee: getAmountType(.BTC).init(withOriginalValue: 10000)) //satoshis
         { (error) in
             
                                                 if error != nil {

@@ -12,7 +12,11 @@ public class BTCWallet: Wallet {
     
     public var address: String
     public var privateKey: Key?
-    public var mnemonic: String?    
+    public var mnemonic: String?
+    
+    public var coinType: CoinType {
+        return CoinType.BTC
+    }
     
     public static func createNewWallet() -> Wallet {
         

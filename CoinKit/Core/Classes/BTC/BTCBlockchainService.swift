@@ -21,29 +21,29 @@ fileprivate class BlockChainInfoTransaction:BTCTransaction {
         guard let txWeight = dictionary["weight"] as? Int else { return nil }
         
         var outputAddresses = [String]()
-        var outputAmounts = [BitcoinAmount]()
+        var outputAmounts = [BTCAmount]()
         
         var inputAddresses = [String]()
-        var inputAmounts = [BitcoinAmount]()
+        var inputAmounts = [BTCAmount]()
         
         (dictionary["inputs"] as? [[String:Any]])?.forEach({ (inputDictionary) in
             
             if let prevOut = inputDictionary["prev_out"] as? [String:Any] {
                 
-                if let inputAddress = prevOut["addr"] as? String, let value = prevOut["value"] as? Int64 {
+                if let inputAddress = prevOut["addr"] as? String, let value = prevOut["value"] as? Double {
                     
                     inputAddresses.append(inputAddress)
-                    inputAmounts.append(BitcoinAmount.init(withValue: value))
+                    inputAmounts.append(BTCAmount.init(withOriginalValue: value))
                 }
             }
         })
         
         (dictionary["out"] as? [[String:Any]])?.forEach({ (outputDictionary) in
             
-            if let outputAddress = outputDictionary["addr"] as? String, let value = outputDictionary["value"] as? Int64 {
+            if let outputAddress = outputDictionary["addr"] as? String, let value = outputDictionary["value"] as? Double {
                 
                 outputAddresses.append(outputAddress)
-                outputAmounts.append(BitcoinAmount.init(withValue: value))
+                outputAmounts.append(BTCAmount.init(withOriginalValue: value))
             }
         })
         
@@ -59,15 +59,15 @@ fileprivate class BlockChainInfoTransaction:BTCTransaction {
     }
 }
 
-fileprivate class BlockChainAmount:BitcoinAmount {
+fileprivate class BlockChainAmount:BTCAmount {
     
     fileprivate convenience init?(withDictionary dictionary:[String:Any]) {
         
-        guard let finalBalance = dictionary["final_balance"] as? Int64 else {
+        guard let finalBalance = dictionary["final_balance"] as? Double else {
             return nil
         }
         
-        self.init(withValue: finalBalance)
+        self.init(withOriginalValue: finalBalance)
     }
 }
 
@@ -149,7 +149,7 @@ public class BTCBlockchainService: BlockchainService {
     }
     
     public func getTransactionFee(_ completition: (Amount?, Error?) -> Void) {
-        completition(BitcoinAmount.init(withValue: CoreBitcoin.BTCTransaction.init().estimatedFee), nil)
+        completition(BTCAmount.init(withOriginalValue: Double(CoreBitcoin.BTCTransaction.init().estimatedFee)), nil)
     }
     
     public func broadcastTransaction(from senderWallet: Wallet, to receiverWallet: Wallet, amount: Amount, fee: Amount, completition: @escaping BroadcastTransactionCompletition) {
@@ -205,10 +205,10 @@ fileprivate class BitcoinTransactionBuilder:NSObject  {
             if let privateKeyData = senderWallet.privateKey?.data {
                 
                 do {
-                    data = try self.buildTransactionSync(amount: amount.value,
+                    data = try self.buildTransactionSync(amount: Int64(amount.originalValue),
                                                          receiverAddress: receiverWallet.address,
                                                          privateKey: privateKeyData,
-                                                         fee: fee.value)
+                                                         fee: Int64(fee.originalValue))
                 }
                 catch {
                     completition(nil, error)
