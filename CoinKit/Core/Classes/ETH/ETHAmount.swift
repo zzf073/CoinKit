@@ -9,21 +9,25 @@ import Foundation
 
 class ETHAmount: Amount {
     
-    var originalValue: Double
+    private static let numberOfWeiInEth = Decimal.init(string: "1000000000000000000")!
+    
+    var originalValue: Decimal
     var formattedValue: Double
     
-    required init(withOriginalValue value: Double) {
+    var representation: String {
+        return "\(self.formattedValue) Ξ"
+    }
+    
+    required init(withOriginalValue value: Decimal) {
+        
         self.originalValue = value
-        self.formattedValue = value
+        self.formattedValue = NSDecimalNumber.init(decimal: (value / ETHAmount.numberOfWeiInEth)).doubleValue
     }
     
     required init?(withFormattedValue formattedValue: Double) {
-        self.originalValue = formattedValue
+        
+        self.originalValue = Decimal.init(formattedValue) * ETHAmount.numberOfWeiInEth
         self.formattedValue = formattedValue
-    }
-    
-    var representation: String {
-        return "\(self.formattedValue) ETH"
     }
     
     required init?(withRepresentation representation: String) {

@@ -9,24 +9,24 @@ import Foundation
 
 public class BTCAmount: Amount {
     
-    private static let numberOfSatoshiInBTC:Double = 100_000_000
-    
-    public var originalValue: Double
+    private static let numberOfSatoshisInBTC = Decimal.init(100_000_000)
+    public var originalValue: Decimal
     public var formattedValue: Double
+    
     public var representation: String {
         return "\(self.formattedValue == 0.0 ? 0 : self.formattedValue) ₿"
     }
     
-    public required init(withOriginalValue value: Double) {
+    public required init(withOriginalValue value: Decimal) {
         
         self.originalValue = value
-        self.formattedValue = originalValue / BTCAmount.numberOfSatoshiInBTC
+        self.formattedValue = NSDecimalNumber.init(decimal:(value / BTCAmount.numberOfSatoshisInBTC)).doubleValue
     }
     
     public required init?(withFormattedValue formattedValue: Double) {
         
         self.formattedValue = formattedValue
-        self.originalValue = formattedValue * BTCAmount.numberOfSatoshiInBTC
+        self.originalValue = Decimal.init(formattedValue) * BTCAmount.numberOfSatoshisInBTC
     }
     
     public required init?(withRepresentation representation: String) {

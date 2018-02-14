@@ -9,9 +9,9 @@ import Foundation
 
 public protocol Amount:Representable {
     
-    var originalValue:Double {get}
+    var originalValue:Decimal {get}
     var formattedValue:Double {get}
     
-    init(withOriginalValue value:Double)
+    init(withOriginalValue value:Decimal)
     init?(withFormattedValue formattedValue:Double)
 }

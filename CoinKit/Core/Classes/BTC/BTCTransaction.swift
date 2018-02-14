@@ -45,7 +45,7 @@ open class BTCTransaction: Transaction {
     
     public func getAmountForAddress(_ address: String) -> Amount? {
         
-        var value = 0.0
+        var value:Decimal = 0.0
         
         self.outputAddresses.forEach { (outputAddress) in
             

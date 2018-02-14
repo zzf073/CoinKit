@@ -1,6 +1,6 @@
 {
   "name": "CoinKit",
-  "version": "1.1",
+  "version": "1.2",
   "summary": "Awesome toolkit for working with cryptocurrencies in Swift",
   "description": "CoinKit can create new and restore existing wallets with mnemonic or private key, receive wallet info from its blockchain such as balance, transactions, fees, etc, and sign and broadcast transactions as well.",
   "homepage": "https://github.com/ovrchk/CoinKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ovrchk/CoinKit.git",
-    "tag": "1.1"
+    "tag": "1.2"
   },
   "platforms": {
     "ios": "8.0"

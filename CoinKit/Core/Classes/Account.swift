@@ -10,6 +10,7 @@ import Foundation
 public class Account {
     
     public var mnemonic:String
+    
     public var btcWallet:Wallet {
         return self.walletForCoin(.BTC)
     }
