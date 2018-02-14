@@ -45,6 +45,12 @@ class ViewController: UIViewController {
         
         NSLog("Another restored wallet address: %@", restoredWallet!.address)
         
+        //Using accounts to create multiple wallets with single mnemonic
+        
+        let account = Account.init(withMnemonic: MnemonicGenerator.generate())!
+        
+        NSLog("Created BTC wallet %@ and ETH wallet %@ from one seed", account.btcWallet.address, account.ethWallet.address)
+        
         //working with blockchain
         
         let blockchainService = getBlockchainServiceType(.BTC).init()

@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
-  - CoinKit (1.0.1):
+  - CoinKit (1.1):
     - AFNetworking
 
 DEPENDENCIES:
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  CoinKit: 220f58e0a2a1b963ffc83bb5245337bc4d4c1e1e
+  CoinKit: 4cf7407723438195875c54316d848a501e364c0e
 
 PODFILE CHECKSUM: 38f94637f8e5f0722482d9518603c825b0029798
 

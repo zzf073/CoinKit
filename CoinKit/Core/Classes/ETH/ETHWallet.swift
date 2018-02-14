@@ -34,7 +34,7 @@ class ETHWallet: Wallet {
     
     required convenience init?(withMnemonic mnemonic: String) {
         
-        guard let account = Account.init(mnemonicPhrase: mnemonic) else {
+        guard let account = ethers.Account.init(mnemonicPhrase: mnemonic) else {
             return nil
         }
         
@@ -45,7 +45,7 @@ class ETHWallet: Wallet {
     
     required init?(withPrivateKey key: Key) {
         
-        guard let account = Account.init(privateKey: key.data) else {
+        guard let account = ethers.Account.init(privateKey: key.data) else {
             return nil
         }
         
