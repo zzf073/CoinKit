@@ -14,6 +14,5 @@ public protocol Wallet {
     var address:String {get}
     var privateKey:Data? {get}
     
-    init(withAddress address:String)
     init?(withPrivateKey key:Data)
 }

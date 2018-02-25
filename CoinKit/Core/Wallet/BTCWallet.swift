@@ -17,10 +17,6 @@ public class BTCWallet: Wallet {
         return .BTC
     }
     
-    required public init(withAddress address: String) {
-        self.address = address
-    }
-    
     public required init?(withPrivateKey key: Data) {
         guard let btcKey = BTCKey.init(privateKey: key) else {
             return nil

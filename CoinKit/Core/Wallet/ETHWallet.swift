@@ -17,11 +17,6 @@ public class ETHWallet: Wallet {
         return .ETH
     }
     
-    required public init(withAddress address: String) {
-        
-        self.address = address
-    }
-    
     required public init?(withPrivateKey key: Data) {
         
         guard let account = ethers.Account.init(privateKey: key) else {
