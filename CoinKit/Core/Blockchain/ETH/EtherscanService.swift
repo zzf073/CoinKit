@@ -166,9 +166,9 @@ public class EtherscanService: BlockchainService {
                         transactions.append(transaction)
                     }
                 })
-                
-                completition(transactions, nil)
             }
+            
+            completition(transactions, nil)
         }
     }
 }

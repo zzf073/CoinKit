@@ -191,9 +191,9 @@ public class BlockchainInfoService: BlockchainService {
                 return
             }
             
+            var transactions = [Transaction]()
+            
             if let dictionary = result as? [String:Any], let transactionsArray = dictionary["txs"] as? [[String:Any]] {
-                
-                var transactions = [Transaction]()
                 
                 transactionsArray.forEach({ (dictionary) in
                     
@@ -202,12 +202,9 @@ public class BlockchainInfoService: BlockchainService {
                         transactions.append(transaction)
                     }
                 })
-                
-                completition(transactions, nil)
             }
-            else {
-                //TODO: Generate error
-            }
+            
+            completition(transactions, nil)
         }
     }
 }
