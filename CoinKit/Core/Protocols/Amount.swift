@@ -7,11 +7,23 @@
 
 import Foundation
 
-public protocol Amount:Representable {
+public protocol Amount {
     
-    var originalValue:Decimal {get}
-    var formattedValue:Double {get}
+    var value:Double {get}
+    var symbol:String {get}
+    var representation:String {get}
+}
+
+public class BaseAmount:Amount {
     
-    init(withOriginalValue value:Decimal)
-    init?(withFormattedValue formattedValue:Double)
+    public var value: Double
+    public var symbol: String
+    public var representation: String {
+        return "\(self.value) \(self.symbol)"
+    }
+    
+    public init(value: Double, symbol: String) {
+        self.value = value
+        self.symbol = symbol
+    }
 }
