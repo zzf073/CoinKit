@@ -1,5 +1,5 @@
 //
-//  Keychain.swift
+//  WalletProvider.swift
 //  AFNetworking
 //
 //  Created by Dmitry on 14.02.2018.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreBitcoin
 
-public class Keychain {
+public class WalletProvider {
     
     public var mnemonic:String
     
@@ -21,7 +21,7 @@ public class Keychain {
         self.mnemonic = mnemonic
     }
     
-    public func deriveWallet(_ type:WalletType, walletIndex:UInt = 0, accountIndex:UInt = 0) -> Wallet? {
+    public func provideWallet(_ type:WalletType, walletIndex:UInt = 0, accountIndex:UInt = 0) -> Wallet? {
         
         guard let mnemonicObject = BTCMnemonic.init(words: mnemonic.components(separatedBy: " "), password: nil, wordListType: .english) else {
             return nil

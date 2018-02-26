@@ -11,7 +11,7 @@ import CoinKit
 
 class ViewController: UIViewController {
     
-    private var serviceLocator:CoinKitServiceLocator!
+    private var serviceLocator:BlockchainServiceLocator!
     
     override func viewDidLoad() {
         
@@ -21,23 +21,16 @@ class ViewController: UIViewController {
         
         NSLog("Mnemonic generated: %@", mnemonic)
         
-        let keychain = Keychain.init(withMnemonic: mnemonic)!
+        let keychain = WalletProvider.init(withMnemonic: mnemonic)!
         
-        let btcWallet = keychain.deriveWallet(.BTC)!
+        let btcWallet = keychain.provideWallet(.BTC)!
         
         self.serviceLocator.walletService(.BTC)?.getWalletsBalance([btcWallet.address], withCompletition: { (result, error) in
             
         })
-        
-        self.serviceLocator.marketService?.getCoins(offset: 0, count: 10, completition: { (result, error) in
-            
-            result?.forEach({ (summary) in
-                NSLog("%@ = %@ (%f%)", summary.coin.name, summary.USDPrice.representation, summary.dayChange!)
-            })
-        })
     }
     
-    private func setupServiceLocator() -> CoinKitServiceLocator {
+    private func setupServiceLocator() -> BlockchainServiceLocator {
         
         let etherscanAPIKey = "7DDK8IYJA2BV9UYRB6HRYNH2UUSG59EWIR"
         

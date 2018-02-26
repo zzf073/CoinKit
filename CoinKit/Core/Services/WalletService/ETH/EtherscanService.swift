@@ -76,7 +76,7 @@ fileprivate class EtherscanTransaction:Transaction {
     }
 }
 
-public class EtherscanService: WalletService {
+open class EtherscanService: BlockchainService {
     
     private var apiKey:String
     private var transport:HTTPTransport

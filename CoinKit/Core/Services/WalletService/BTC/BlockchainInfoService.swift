@@ -129,7 +129,7 @@ fileprivate class BlockChainInfoTransaction:Transaction {
     }
 }
 
-public class BlockchainInfoService: WalletService {
+open class BlockchainInfoService: BlockchainService {
     
     private var transport:HTTPTransport
     
