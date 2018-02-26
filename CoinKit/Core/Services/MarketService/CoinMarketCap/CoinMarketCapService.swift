@@ -58,7 +58,7 @@ fileprivate class CoinMarketCapCoinSummary:CoinSummary {
     }
 }
 
-open class CoinMarketCapService:NSObject, MarketService {
+open class CoinMarketCapService:MarketService {
     
     private var transport:HTTPTransport
     

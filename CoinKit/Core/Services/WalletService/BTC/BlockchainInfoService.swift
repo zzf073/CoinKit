@@ -129,7 +129,7 @@ fileprivate class BlockChainInfoTransaction:Transaction {
     }
 }
 
-open class BlockchainInfoService:NSObject, BlockchainService {
+open class BlockchainInfoService: BlockchainService {
     
     private var transport:HTTPTransport
     
