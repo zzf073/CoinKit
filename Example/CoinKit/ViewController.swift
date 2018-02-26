@@ -11,36 +11,45 @@ import CoinKit
 
 class ViewController: UIViewController {
     
+    private var serviceLocator:CoinKitServiceLocator!
+    
     override func viewDidLoad() {
         
-        let mnemonic = "smile record torch gentle zoo betray proof expand receive merit melody virus"
+        self.serviceLocator = self.setupServiceLocator()
+        
+        let mnemonic = MnemonicGenerator.generate()
+        
+        NSLog("Mnemonic generated: %@", mnemonic)
         
         let keychain = Keychain.init(withMnemonic: mnemonic)!
         
-        let btcWallet = keychain.deriveWallet(.BTC)
+        let btcWallet = keychain.deriveWallet(.BTC)!
         
-        if btcWallet != nil {
+        self.serviceLocator.walletService(.BTC)?.getWalletsBalance([btcWallet.address], withCompletition: { (result, error) in
             
-            NSLog("Derivered BTC wallet: %@", btcWallet!.address)
-        }
+        })
         
-        let ethWallet = keychain.deriveWallet(.ETH)
-        
-        if ethWallet != nil {
+        self.serviceLocator.marketService?.getCoins(offset: 0, count: 10, completition: { (result, error) in
             
-            NSLog("Derivered ETH wallet: %@", ethWallet!.address)
-        }
+            result?.forEach({ (summary) in
+                NSLog("%@ = %@ (%f%)", summary.coin.name, summary.USDPrice.representation, summary.dayChange!)
+            })
+        })
+    }
+    
+    private func setupServiceLocator() -> CoinKitServiceLocator {
         
-        //using service locator
+        let etherscanAPIKey = "7DDK8IYJA2BV9UYRB6HRYNH2UUSG59EWIR"
         
-        let serviceLocator = BaseBlockchainServiceLocator()
+        let serviceLocator = BaseCoinKitServiceLocator()
         
         let transport = AFNetworkingTransport()
         
-        serviceLocator[.BTC] = BlockchainInfoService.init(transport: transport)
-        serviceLocator[.ETH] = EtherscanService.init(apiKey: "7DDK8IYJA2BV9UYRB6HRYNH2UUSG59EWIR", transport: transport)
+        serviceLocator.setWalletService(BlockchainInfoService.init(transport: transport), .BTC)
+        serviceLocator.setWalletService(EtherscanService.init(apiKey: etherscanAPIKey, transport: transport), .ETH)
         
+        serviceLocator.marketService = CoinMarketCapService.init(transport: transport)
         
-        
+        return serviceLocator
     }
 }

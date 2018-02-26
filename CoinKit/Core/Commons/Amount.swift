@@ -27,3 +27,14 @@ public class BaseAmount:Amount {
         self.symbol = symbol
     }
 }
+
+public class USDAmount:BaseAmount {
+    
+    public override var representation: String {
+        return "\(self.symbol)\(self.value)"
+    }
+    
+    public init(value: Double) {
+        super.init(value: value, symbol: "$")
+    }
+}
