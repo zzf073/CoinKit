@@ -15,13 +15,9 @@ public protocol BlockchainServiceLocator {
     subscript(type:WalletType) -> BlockchainService? {get set}
 }
 
-open class BaseCoinKitServiceLocator:BlockchainServiceLocator {
+open class BaseCoinKitServiceLocator:NSObject, BlockchainServiceLocator {
     
     public var marketService: MarketService?
-    
-    public init() {
-        
-    }
     
     public subscript(type: WalletType) -> BlockchainService? {
         get {
