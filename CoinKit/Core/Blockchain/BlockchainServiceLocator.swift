@@ -11,6 +11,8 @@ public protocol BlockchainServiceLocator {
     
     func setBlockchainService(_ service:BlockchainService?, forWalletType type:WalletType)
     func getBlockchainService(forWalletType type:WalletType) -> BlockchainService?
+    
+    subscript(type:WalletType) -> BlockchainService? {get set}
 }
 
 public class BaseBlockchainServiceLocator:BlockchainServiceLocator {
