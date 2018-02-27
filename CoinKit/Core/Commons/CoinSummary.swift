@@ -10,9 +10,8 @@ import Foundation
 public protocol CoinSummary {
     
     var coin:CoinDescription {get}
-    var USDPrice:Amount {get}
-    
-    var hourChange:Double? {get}
-    var dayChange:Double? {get}
-    var weekChange:Double? {get}
+    var marketCapUSD:Amount {get}
+    var priceUSD:Amount {get}
+    var dailyVolume:Double {get}
+    var dailyPriceChange:Double {get}
 }
