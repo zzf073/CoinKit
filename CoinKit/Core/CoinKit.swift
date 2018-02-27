@@ -13,6 +13,19 @@ public enum WalletType:Int {
     case BTC = 0
     case ETH = 60
     
+    public static var availableTypes:[WalletType] = {
+        
+        var result = [WalletType]()
+        
+        for i in 0..<100 {
+            if let type = WalletType.init(rawValue: i) {
+                result.append(type)
+            }
+        }
+        
+        return result
+    }()
+    
     public func validateAddress(_ addressString:String) -> Bool {
         
         switch self {
