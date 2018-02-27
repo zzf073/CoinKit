@@ -57,9 +57,9 @@ fileprivate class EtherscanTransaction:Transaction {
         self.transactionHash = hash
         self.time = Date.init(timeIntervalSince1970: timeInterval)
         self.blockHeight = blockNumber
-        self.from = "from"
-        self.to = "to"
-        self.amount = BaseAmount.init(value: 1, symbol: "ETH")
+        self.from = senderAddress
+        self.to = receiverAddress
+        self.amount = EtherscanAmount.init(weiValue: value)
     }
     
     func isOutgoingForAddress(_ address: String) -> Bool? {

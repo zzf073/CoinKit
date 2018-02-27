@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         let btcWallet = keychain.provideWallet(.BTC)!
         
-        self.serviceLocator.walletService(.BTC)?.getWalletsBalance([btcWallet.address], withCompletition: { (result, error) in
+        self.serviceLocator[.ETH]?.getWalletTransactions("0x86Cf32E1E6E5BAE58dd0D2F048f53eA0469E87dF", offset: 0, count: 10, withCompletition: { (result, error) in
             
         })
     }
