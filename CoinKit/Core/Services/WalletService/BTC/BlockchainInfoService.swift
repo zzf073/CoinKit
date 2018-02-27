@@ -45,7 +45,7 @@ fileprivate class BlockChainInfoTransaction:Transaction {
     var to: String
     var amount: Amount
     
-    init?(withDictionary dictionary:[String:Any]) {
+    init?(withDictionary dictionary:[String:Any], walletAddress:String) {
         
         guard let hash = dictionary["hash"] as? String else { return nil }
         guard let timeInterval = dictionary["time"] as? Double else { return nil }
@@ -81,9 +81,24 @@ fileprivate class BlockChainInfoTransaction:Transaction {
         self.transactionHash = hash
         self.time = Date.init(timeIntervalSince1970: timeInterval)
         self.blockHeight = blockHeight
+        
         self.from = "from"
         self.to = "to"
-        self.amount = BlockchainInfoAmount.init(value: 22)
+        self.amount = BlockchainInfoAmount.init(value: 999999)
+        
+        if outputAddresses.contains(walletAddress) {
+            
+            self.to = walletAddress
+            self.amount = outputAmounts[outputAddresses.index(of: walletAddress)!]
+        }
+        else if inputAddresses.contains(walletAddress)
+        {
+            self.from = walletAddress
+            self.amount = inputAmounts[inputAddresses.index(of: walletAddress)!]
+        }
+        else {
+            return nil
+        }
     }
 }
 
@@ -155,7 +170,7 @@ open class BlockchainInfoService: BlockchainService {
                 
                 transactionsArray.forEach({ (dictionary) in
                     
-                    if let transaction = BlockChainInfoTransaction.init(withDictionary: dictionary) {
+                    if let transaction = BlockChainInfoTransaction.init(withDictionary: dictionary, walletAddress: walletAddress) {
                         
                         transactions.append(transaction)
                     }

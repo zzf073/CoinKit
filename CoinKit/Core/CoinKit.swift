@@ -29,8 +29,21 @@ public enum WalletType:Int {
     public func validateAddress(_ addressString:String) -> Bool {
         
         switch self {
-        case .BTC: return BTCAddress.init(string: addressString) != nil
-        case .ETH: return Address.init(string: addressString) != nil
+        case .BTC:
+            
+            guard addressString.starts(with: "1") || addressString.starts(with: "3") else {
+                return false
+            }
+            
+            return BTCAddress.init(string: addressString) != nil
+            
+        case .ETH:
+            
+            guard addressString.starts(with: "0x") else {
+                return false
+            }
+            
+            return Address.init(string: addressString) != nil
         }
     }
     
