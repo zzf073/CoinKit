@@ -26,15 +26,13 @@ fileprivate class EtherscanAmount:BaseAmount {
 }
 
 fileprivate class EtherscanTransaction:Transaction {
+    
     var transactionHash: String
     var time: Date
-    var size: Int
     var blockHeight: Int
-    var weight: Int
-    var inputAddresses: [String]
-    var inputAmounts: [Amount]
-    var outputAddresses: [String]
-    var outputAmounts: [Amount]
+    var from: String
+    var to: String
+    var amount: Amount
     
     init?(transactionDictionary:[String:Any]) {
         
@@ -58,13 +56,10 @@ fileprivate class EtherscanTransaction:Transaction {
         
         self.transactionHash = hash
         self.time = Date.init(timeIntervalSince1970: timeInterval)
-        self.size = 0
         self.blockHeight = blockNumber
-        self.weight = 0
-        self.inputAddresses = [senderAddress]
-        self.inputAmounts = [EtherscanAmount.init(weiValue: value)]
-        self.outputAddresses = [receiverAddress]
-        self.outputAmounts = [EtherscanAmount.init(weiValue: value)]
+        self.from = "from"
+        self.to = "to"
+        self.amount = BaseAmount.init(value: 1, symbol: "ETH")
     }
     
     func isOutgoingForAddress(_ address: String) -> Bool? {
@@ -141,7 +136,7 @@ open class EtherscanService: BlockchainService {
         params["startblock"] = 0
         params["endblock"] = Int64.max
         params["apikey"] = self.apiKey
-        params["sort"] = "asc"
+        params["sort"] = "desc"
         
         let page = offset > 0 ? (count / offset) + 1 : 1
         

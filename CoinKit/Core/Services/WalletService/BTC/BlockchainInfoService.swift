@@ -40,23 +40,16 @@ fileprivate class BlockChainInfoTransaction:Transaction {
     
     public var transactionHash: String
     public var time: Date
-    public var size: Int
     public var blockHeight: Int
-    public var weight: Int
-    
-    public var inputAddresses: [String]
-    public var inputAmounts: [Amount]
-    
-    public var outputAddresses: [String]
-    public var outputAmounts: [Amount]
+    var from: String
+    var to: String
+    var amount: Amount
     
     init?(withDictionary dictionary:[String:Any]) {
         
         guard let hash = dictionary["hash"] as? String else { return nil }
         guard let timeInterval = dictionary["time"] as? Double else { return nil }
-        guard let size = dictionary["size"] as? Int else { return nil }
         guard let blockHeight = dictionary["block_height"] as? Int else { return nil }
-        guard let txWeight = dictionary["weight"] as? Int else { return nil }
         
         var outputAddresses = [String]()
         var outputAmounts = [BlockchainInfoAmount]()
@@ -87,45 +80,10 @@ fileprivate class BlockChainInfoTransaction:Transaction {
         
         self.transactionHash = hash
         self.time = Date.init(timeIntervalSince1970: timeInterval)
-        self.size = size
         self.blockHeight = blockHeight
-        self.weight = txWeight
-        self.inputAddresses = inputAddresses
-        self.inputAmounts = inputAmounts
-        self.outputAddresses = outputAddresses
-        self.outputAmounts = outputAmounts
-    }
-    
-    public func getAmountForAddress(_ address: String) -> Amount? {
-        
-        var value:Double = 0.0
-        
-        self.outputAddresses.forEach { (outputAddress) in
-            
-            if outputAddress == address {
-                
-                value += self.outputAmounts[self.outputAddresses.index(of: outputAddress)!].value
-            }
-        }
-        
-        self.inputAddresses.forEach { (inputAddress) in
-            
-            if inputAddress == address {
-                
-                value += self.inputAmounts[self.inputAddresses.index(of: inputAddress)!].value
-            }
-        }
-        
-        return BlockchainInfoAmount.init(value: value)
-    }
-    
-    public func isOutgoingForAddress(_ address: String) -> Bool? {
-        
-        guard self.inputAddresses.contains(address) || self.outputAddresses.contains(address) else {
-            return nil
-        }
-        
-        return self.inputAddresses.contains(address)
+        self.from = "from"
+        self.to = "to"
+        self.amount = BlockchainInfoAmount.init(value: 22)
     }
 }
 
