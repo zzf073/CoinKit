@@ -20,4 +20,20 @@ public enum WalletType:Int {
         case .ETH: return Address.init(string: addressString) != nil
         }
     }
+    
+    public func coinName() -> String {
+        
+        switch self {
+        case .BTC: return "Bitcoin"
+        case .ETH: return "Etherium"
+        }
+    }
+    
+    public func coinSymbol() -> String {
+        
+        switch self {
+        case .BTC: return "BTC"
+        case .ETH: return "ETH"
+        }
+    }
 }
