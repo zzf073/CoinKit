@@ -86,14 +86,20 @@ fileprivate class BlockChainInfoTransaction:Transaction {
         self.to = "to"
         self.amount = BlockchainInfoAmount.init(value: 999999)
         
+        guard !inputAmounts.isEmpty && !outputAmounts.isEmpty && !inputAddresses.isEmpty && !outputAddresses.isEmpty else {
+            return nil
+        }
+        
         if outputAddresses.contains(walletAddress) {
             
             self.to = walletAddress
+            self.from = inputAddresses.first!
             self.amount = outputAmounts[outputAddresses.index(of: walletAddress)!]
         }
         else if inputAddresses.contains(walletAddress)
         {
             self.from = walletAddress
+            self.to = outputAddresses.first!
             self.amount = inputAmounts[inputAddresses.index(of: walletAddress)!]
         }
         else {
