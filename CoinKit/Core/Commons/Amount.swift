@@ -28,13 +28,41 @@ public class BaseAmount:Amount {
     }
 }
 
-public class USDAmount:BaseAmount {
+public class FiatAmount:BaseAmount {
+    
+    private var fiatType:FiatType
+    private static var numberFormatter:NumberFormatter = {
+        
+        let formatter = NumberFormatter.init()
+        formatter.numberStyle = .decimal
+        formatter.locale = NSLocale.current
+        formatter.currencySymbol = ""
+        
+        return formatter
+    }()
     
     public override var representation: String {
-        return "\(self.symbol)\(self.value)"
+        
+        if self.isSymbolBeforeValue() {
+            return "\(self.fiatType.symbol())\(self.formattedValue())"
+        }
+        else {
+            return "\(self.formattedValue())\(self.fiatType.symbol())"
+        }
     }
     
-    public init(value: Double) {
-        super.init(value: value, symbol: "$")
+    public init(value: Double, fiatType:FiatType) {
+        
+        self.fiatType = fiatType
+        
+        super.init(value: value, symbol: fiatType.rawValue)
+    }
+    
+    private func formattedValue() -> String {
+        return FiatAmount.numberFormatter.string(from: NSNumber.init(value: self.value))!
+    }
+    
+    private func isSymbolBeforeValue() -> Bool {
+        return self.fiatType == .USD || self.fiatType == .EUR
     }
 }

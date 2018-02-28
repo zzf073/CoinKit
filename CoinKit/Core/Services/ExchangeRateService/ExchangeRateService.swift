@@ -7,12 +7,6 @@
 
 import Foundation
 
-public enum FiatType:String {
-    case USD = "USD"
-    case EUR = "EUR"
-    case RUB = "RUB"
-}
-
 public typealias ReloadExchangeRatesCompletition = () -> Void
 public typealias GetExchangeRatesCompletition = (FiatType, [String:Double]) -> Void
 

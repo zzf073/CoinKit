@@ -63,3 +63,21 @@ public enum WalletType:Int {
         }
     }
 }
+
+public enum FiatType:String {
+    case USD = "USD"
+    case EUR = "EUR"
+    case RUB = "RUB"
+    
+    public func symbol() -> String {
+        
+        switch self {
+        case .USD: return "$"
+        case .RUB: return "₽"
+        case .EUR: return "€"
+        default: break
+        }
+        
+        return self.rawValue
+    }
+}

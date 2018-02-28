@@ -54,8 +54,8 @@ fileprivate class CoinCapCoinSummary:CoinSummary {
         
         self.coin = description
         
-        self.marketCapUSD = USDAmount.init(value: mcap)
-        self.priceUSD = USDAmount.init(value: price)
+        self.marketCapUSD = FiatAmount.init(value: mcap, fiatType: .USD)
+        self.priceUSD = FiatAmount.init(value: price, fiatType: .USD)
         self.dailyVolume = dvol
         self.dailyPriceChange = change
     }

@@ -56,7 +56,9 @@ public class FixerExchangeRateService:ExchangeRateService {
                 }
             })
             
-            completition(targetCurrency, result)
+            DispatchQueue.main.async {
+                completition(targetCurrency, result)
+            }
         }
     }
     
