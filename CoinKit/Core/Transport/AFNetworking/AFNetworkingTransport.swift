@@ -16,7 +16,7 @@ public class AFNetworkingTransport:HTTPTransport {
         
     }
     
-    public func executeRequest(withURL url: String, params: [String : Any], method: HTTPMethod, completition: HTTPTransportCompletition?) {
+    public func executeRequest(withURL url: String, params: [String : Any]?, method: HTTPMethod, completition: HTTPTransportCompletition?) {
         
         self.manager.get(url,
                          parameters: params,

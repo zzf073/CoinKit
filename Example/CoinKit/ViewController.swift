@@ -15,23 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        CoinCapService.init(transport: AFNetworkingTransport()).getCoins(offset: 0, count: 10) { (result, error) in
+        let transport = AFNetworkingTransport()
+        
+        FixerExchangeRateService.init(transport: transport, marketService: CoinCapService.init(transport: transport)).getExchangeRatesForCoinSymbols(["BTC", "ETH", "NEO", "LTC"], targetCurrency: .RUB) { (fiatType, rates) in
             
         }
-        
-//        self.serviceLocator = self.setupServiceLocator()
-//
-//        let mnemonic = MnemonicGenerator.generate()
-//
-//        NSLog("Mnemonic generated: %@", mnemonic)
-//
-//        let keychain = WalletProvider.init(withMnemonic: mnemonic)!
-        
-//        let btcWallet = keychain.provideWallet(.BTC)!
-//
-//        self.serviceLocator[.BTC]?.getWalletTransactions("31jauoCV34FjM9VUitwWvVcPydKqjWC5qd", offset: 0, count: 10, withCompletition: { (result, error) in
-//
-//        })
     }
     
     private func setupServiceLocator() -> BlockchainServiceLocator {
@@ -44,8 +32,6 @@ class ViewController: UIViewController {
         
         serviceLocator.setWalletService(BlockchainInfoService.init(transport: transport), .BTC)
         serviceLocator.setWalletService(EtherscanService.init(apiKey: etherscanAPIKey, transport: transport), .ETH)
-        
-//        serviceLocator.marketService = CoinMarketCapService.init(transport: transport)
         
         return serviceLocator
     }

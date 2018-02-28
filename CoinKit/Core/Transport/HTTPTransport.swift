@@ -15,5 +15,5 @@ public enum HTTPMethod {
 
 public protocol HTTPTransport {
     
-    func executeRequest(withURL url:String, params:[String:Any], method:HTTPMethod, completition:HTTPTransportCompletition?)
+    func executeRequest(withURL url:String, params:[String:Any]?, method:HTTPMethod, completition:HTTPTransportCompletition?)
 }

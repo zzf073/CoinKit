@@ -17,8 +17,6 @@ public protocol BlockchainServiceLocator {
 
 open class BaseCoinKitServiceLocator:BlockchainServiceLocator {
     
-    public var marketService: MarketService?
-    
     public init() {
         
     }
