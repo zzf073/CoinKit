@@ -59,6 +59,18 @@ public class FiatAmount:BaseAmount {
     }
     
     private func formattedValue() -> String {
+        
+        var maximumFractionDigits = 5
+        
+        if self.value > 100 {
+            maximumFractionDigits = 0
+        }
+        else if self.value > 10 {
+            maximumFractionDigits = 1
+        }
+        
+        FiatAmount.numberFormatter.maximumFractionDigits = maximumFractionDigits
+        
         return FiatAmount.numberFormatter.string(from: NSNumber.init(value: self.value))!
     }
     
