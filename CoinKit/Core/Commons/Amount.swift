@@ -66,7 +66,7 @@ public class FiatAmount:BaseAmount {
             maximumFractionDigits = 2
         }
         else if self.value < 1 {
-            maximumFractionDigits = 4
+            maximumFractionDigits = 6
         }
         
         FiatAmount.numberFormatter.maximumFractionDigits = maximumFractionDigits
