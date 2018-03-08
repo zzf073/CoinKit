@@ -62,12 +62,9 @@ public class FiatAmount:BaseAmount {
         
         var maximumFractionDigits = 0
         
-        if self.value > 100 {
+        if self.value < 100 {
             maximumFractionDigits = 2
         }
-//        else if self.value > 10 {
-//            maximumFractionDigits = 2
-//        }
         else if self.value < 1 {
             maximumFractionDigits = 4
         }
