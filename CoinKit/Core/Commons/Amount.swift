@@ -60,13 +60,16 @@ public class FiatAmount:BaseAmount {
     
     private func formattedValue() -> String {
         
-        var maximumFractionDigits = 5
+        var maximumFractionDigits = 0
         
         if self.value > 100 {
-            maximumFractionDigits = 0
+            maximumFractionDigits = 2
         }
-        else if self.value > 10 {
-            maximumFractionDigits = 1
+//        else if self.value > 10 {
+//            maximumFractionDigits = 2
+//        }
+        else if self.value < 1 {
+            maximumFractionDigits = 4
         }
         
         FiatAmount.numberFormatter.maximumFractionDigits = maximumFractionDigits
