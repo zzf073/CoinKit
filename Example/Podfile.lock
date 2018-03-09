@@ -14,8 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - Alamofire (4.7.0)
+  - Arcane (1.2.1)
   - CoinKit (1.2):
     - AFNetworking
+    - Alamofire
+    - Arcane
 
 DEPENDENCIES:
   - CoinKit (from `../`)
@@ -26,7 +30,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  CoinKit: 8103ede0209f688db2a9f34497072798e33f9778
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Arcane: 870689a8ba7145a7dec0c2d7d7836b50c9f12636
+  CoinKit: ef52e20f1259fa141479ca51962ac31edb003c8d
 
 PODFILE CHECKSUM: 38f94637f8e5f0722482d9518603c825b0029798
 

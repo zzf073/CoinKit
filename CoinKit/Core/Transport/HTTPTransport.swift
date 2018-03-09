@@ -9,11 +9,11 @@ import Foundation
 
 public typealias HTTPTransportCompletition = (Any?, Error?) -> Void
 
-public enum HTTPMethod {
+public enum HTTPTransportMethod {
     case GET
 }
 
 public protocol HTTPTransport {
     
-    func executeRequest(withURL url:String, params:[String:Any]?, method:HTTPMethod, completition:HTTPTransportCompletition?)
+    func executeRequest(withURL url:String, params:[String:Any]?, method:HTTPTransportMethod, completition:HTTPTransportCompletition?)
 }

@@ -81,3 +81,7 @@ public enum FiatType:String {
         return self.rawValue
     }
 }
+
+public enum ExchangeType:String {
+    case Binance = "Binance"
+}

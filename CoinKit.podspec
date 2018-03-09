@@ -28,4 +28,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'CoinKit/Frameworks/CoreBitcoin.framework', 'CoinKit/Frameworks/ethers.framework'
   
   s.dependency 'AFNetworking'
+  s.dependency 'Alamofire'
+  s.dependency 'Arcane'
 end

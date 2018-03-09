@@ -9,13 +9,14 @@ import Foundation
 
 public protocol BlockchainServiceLocator {
     
-    func setWalletService(_ service:BlockchainService?, _ type:WalletType)
-    func walletService(_ type:WalletType) -> BlockchainService?
-    
     subscript(type:WalletType) -> BlockchainService? {get set}
+    subscript(type:ExchangeType) -> ExchangeService? {get set}
 }
 
 open class BaseCoinKitServiceLocator:BlockchainServiceLocator {
+    
+    private var walletServices = [WalletType:BlockchainService]()
+    private var exchangeServices = [ExchangeType:ExchangeService]()
     
     public init() {
         
@@ -23,22 +24,19 @@ open class BaseCoinKitServiceLocator:BlockchainServiceLocator {
     
     public subscript(type: WalletType) -> BlockchainService? {
         get {
-            return self.walletService(type)
+            return self.walletServices[type]
         }
         set {
-            self.setWalletService(newValue, type)
+            self.walletServices[type] = newValue
         }
     }
     
-    private var walletServices = [WalletType:BlockchainService]()
-    
-    public func setWalletService(_ service: BlockchainService?, _ type: WalletType) {
-        
-        self.walletServices[type] = service
-    }
-    
-    public func walletService(_ type: WalletType) -> BlockchainService? {
-        
-        return self.walletServices[type]
+    public subscript(type: ExchangeType) -> ExchangeService? {
+        get {
+            return self.exchangeServices[type]
+        }
+        set {
+            self.exchangeServices[type] = newValue
+        }
     }
 }

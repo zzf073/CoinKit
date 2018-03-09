@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         
         let transport = AFNetworkingTransport()
         
-        serviceLocator.setWalletService(BlockchainInfoService.init(transport: transport), .BTC)
-        serviceLocator.setWalletService(EtherscanService.init(apiKey: etherscanAPIKey, transport: transport), .ETH)
+        serviceLocator[.BTC] = BlockchainInfoService.init(transport: transport)
+        serviceLocator[.ETH] = EtherscanService.init(apiKey: etherscanAPIKey, transport: transport)
         
         return serviceLocator
     }

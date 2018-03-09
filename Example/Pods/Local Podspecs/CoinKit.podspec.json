@@ -30,6 +30,12 @@
   "dependencies": {
     "AFNetworking": [
 
+    ],
+    "Alamofire": [
+
+    ],
+    "Arcane": [
+
     ]
   }
 }
