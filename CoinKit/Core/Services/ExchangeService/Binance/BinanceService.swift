@@ -24,9 +24,12 @@ public class BinanceService: ExchangeService {
         
     }
     
-    public func getAccountBalance(_ completition: ([String : Double]?, Error?) -> Void) {
+    public func getAccountBalance(_ completition: ([String : Amount]?, Error?) -> Void) {
         
-        completition(["BTC" : 0.05, "ETH" : 0.2, "ADA" : 10, "XRP" : 240], nil)
+        completition(["BTC" : BaseAmount.init(value: 0.05, symbol: "BTC") ,
+                      "ETH" : BaseAmount.init(value: 0.2, symbol: "ETH"),
+                      "ADA" : BaseAmount.init(value: 10, symbol: "ADA"),
+                      "XRP" : BaseAmount.init(value: 240, symbol: "XRP")], nil)
         
 //        return
 //        

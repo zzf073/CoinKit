@@ -27,5 +27,5 @@ public protocol ExchangeService {
     
     var authCredentials:ExchangeServiceAuthCredentials? {get set}
     
-    func getAccountBalance(_ completition:([String:Double]?, Error?) -> Void)
+    func getAccountBalance(_ completition:([String:Amount]?, Error?) -> Void)
 }
