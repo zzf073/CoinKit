@@ -7,9 +7,16 @@
 
 import Foundation
 
-public struct ExchangeServiceAuthCredentials {
-    public var apiKey:String?
-    public var secretKey:String?
+public protocol ExchangeServiceAuthCredentials {
+    
+    var apiKey:String? {get set}
+    var secretKey:String? {get set}
+}
+
+public struct CoinKitExchangeServiceAuthCredentials:ExchangeServiceAuthCredentials {
+    
+    public var apiKey: String?
+    public var secretKey: String?
     
     public init() {
         
