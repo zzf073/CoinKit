@@ -10,7 +10,7 @@ import CoreBitcoin
 import Foundation
 import AFNetworking
 
-fileprivate class BlockchainInfoAmount: CryptoAmount {
+fileprivate class BlockchainInfoAmount: BaseAmount {
     
     convenience init?(withDictionary dictionary:[String:Any]) {
         

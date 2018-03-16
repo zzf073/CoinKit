@@ -79,7 +79,7 @@ public class CexService:ExchangeService {
                                             let totalBalance = availableValue + ordersValue
                                             
                                             if totalBalance > 0 {
-                                                balance[coinSymbol] = CryptoAmount.init(value: totalBalance, symbol: coinSymbol)
+                                                balance[coinSymbol] = BaseAmount.init(value: totalBalance, symbol: coinSymbol)
                                             }
                                         }
                                     }

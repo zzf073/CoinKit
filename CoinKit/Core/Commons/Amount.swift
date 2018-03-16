@@ -23,24 +23,20 @@ public class BaseAmount:Amount {
     }
     
     public init(value: Double, symbol: String) {
-        self.value = value
-        self.symbol = symbol
-    }
-}
-
-public class CryptoAmount:BaseAmount {
-    
-    public override init(value: Double, symbol: String) {
         
         var specialSymbol = symbol
         
         switch symbol {
         case "BTC": specialSymbol = "₿"
         case "ETH": specialSymbol = "Ξ"
+        case "USD": specialSymbol = "$"
+        case "RUB": specialSymbol = "₽"
+        case "EUR": specialSymbol = "€"
         default:break
         }
         
-        super.init(value: value, symbol: specialSymbol)
+        self.value = value
+        self.symbol = specialSymbol
     }
 }
 
@@ -60,10 +56,10 @@ public class FiatAmount:BaseAmount {
     public override var representation: String {
         
         if self.isSymbolBeforeValue() {
-            return "\(self.fiatType.symbol())\(self.formattedValue())"
+            return "\(self.symbol)\(self.formattedValue())"
         }
         else {
-            return "\(self.formattedValue())\(self.fiatType.symbol())"
+            return "\(self.formattedValue())\(self.symbol)"
         }
     }
     

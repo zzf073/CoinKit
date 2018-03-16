@@ -9,7 +9,7 @@ import Foundation
 import ethers
 import AFNetworking
 
-fileprivate class EtherscanAmount:CryptoAmount {
+fileprivate class EtherscanAmount:BaseAmount {
     
     convenience init(weiValue:Decimal) {
         
