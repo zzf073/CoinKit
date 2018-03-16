@@ -24,7 +24,7 @@ public class BinanceService: ExchangeService {
         
     }
     
-    public func getAccountBalance(_ completition: ([String : Amount]?, Error?) -> Void) {
+    public func getAccountBalance(_ completition: @escaping ([String : Amount]?, Error?) -> Void) {
         
         completition(["BTC" : BaseAmount.init(value: 0.05, symbol: "BTC") ,
                       "ETH" : BaseAmount.init(value: 0.2, symbol: "ETH"),

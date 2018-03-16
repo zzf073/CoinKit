@@ -83,15 +83,15 @@ public enum FiatType:String {
 }
 
 public enum ExchangeType:String {
-    case Binance = "Binance"
+    case Cex = "Cex.io"
     
     public static func all() -> [ExchangeType] {
-        return [.Binance]
+        return [.Cex]
     }
     
-    public func exchangeService() -> ExchangeService {
+    public func initiateExchangeService() -> ExchangeService {
         switch self {
-        case .Binance: return BinanceService.init()
+        case .Cex: return CexService.init()
         }
     }
 }
