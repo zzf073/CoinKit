@@ -31,7 +31,7 @@ public class CexService:ExchangeService {
         
         let nonce = self.nonce
         
-        let signatureString = HMAC.SHA256("\(self.nonce)\(userID)\(apiKey)", key: secretKey)!
+        let signatureString = HMAC.SHA256("\(nonce)\(userID)\(apiKey)", key: secretKey)!
         
         let parameters = ["key" : apiKey,
                           "nonce" : String(nonce),
