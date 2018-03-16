@@ -18,13 +18,25 @@ public class AFNetworkingTransport:HTTPTransport {
     
     public func executeRequest(withURL url: String, params: [String : Any]?, method: HTTPTransportMethod, completition: HTTPTransportCompletition?) {
         
-        self.manager.get(url,
-                         parameters: params,
-                         success:
-        { (task, result) in
-            completition?(result, nil)
-        }) { (task, error) in
-            completition?(nil, error)
+        switch method {
+        case .GET:
+            self.manager.get(url, parameters: params,
+                             progress: nil,
+                             success:
+                { (task, result) in
+                completition?(result, nil)
+                },
+                             failure:
+                { (task, error) in
+                completition?(nil, error)
+                })
+        case .POST:
+            
+            self.manager.post(url,
+                              parameters: params,
+                              progress: nil,
+                              success: { (task, result) in completition?(result, nil) },
+                              failure: { (task, error) in  completition?(nil, error) })
         }
     }
 }

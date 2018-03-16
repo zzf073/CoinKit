@@ -9,7 +9,10 @@ import Foundation
 
 public enum ExchangeServiceError:Int {
     
-    case APIError
+    case UnknownError
+    case IncompleteCredentials //no api key proved, etc
+    case APIError // server responded, but there is some error (eg some params are invalid)
+    case ParsingError // server returned response without error, but format is unsupported
     
     public static var domain = "ExhangeServiceError"
     

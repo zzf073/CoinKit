@@ -9,7 +9,7 @@ import Foundation
 import ethers
 import AFNetworking
 
-fileprivate class EtherscanAmount:BaseAmount {
+fileprivate class EtherscanAmount:CryptoAmount {
     
     convenience init(weiValue:Decimal) {
         
@@ -21,55 +21,10 @@ fileprivate class EtherscanAmount:BaseAmount {
     }
     
     public init(value: Double) {
-        super.init(value: value, symbol: "Ξ")
+        super.init(value: value, symbol: "ETH")
     }
 }
 
-fileprivate class EtherscanTransaction:Transaction {
-    
-    var transactionHash: String
-    var time: Date
-    var blockHeight: Int
-    var from: String
-    var to: String
-    var amount: Amount
-    
-    init?(transactionDictionary:[String:Any]) {
-        
-        guard let hash = transactionDictionary["hash"] as? String else {
-            return nil
-        }
-        
-        guard let timestampString = transactionDictionary["timeStamp"] as? String, let timeInterval = Double(timestampString) else {
-            return nil
-        }
-        
-        guard let blockNumberString = transactionDictionary["blockNumber"] as? String, let blockNumber = Int(blockNumberString) else {
-            return nil
-        }
-        
-        guard let senderAddress = transactionDictionary["from"] as? String, let receiverAddress = transactionDictionary["to"] as? String else {
-            return nil
-        }
-        
-        let value = NSDecimalNumber.init(string: transactionDictionary["value"] as? String).decimalValue
-        
-        self.transactionHash = hash
-        self.time = Date.init(timeIntervalSince1970: timeInterval)
-        self.blockHeight = blockNumber
-        self.from = senderAddress
-        self.to = receiverAddress
-        self.amount = EtherscanAmount.init(weiValue: value)
-    }
-    
-    func isOutgoingForAddress(_ address: String) -> Bool? {
-        return false
-    }
-    
-    func getAmountForAddress(_ address: String) -> Amount? {
-        return nil
-    }
-}
 
 open class EtherscanService: BlockchainService {
     
@@ -120,50 +75,6 @@ open class EtherscanService: BlockchainService {
             }
             
             completition(operationResult, nil)
-        }
-    }
-    
-    public func getWalletTransactions(_ walletAddress: String,
-                                      offset: UInt,
-                                      count: UInt,
-                                      withCompletition completition: @escaping GetWalletTransactionsCompletition) {
-        
-        var params = [String:Any]()
-        
-        params["module"] = "account"
-        params["action"] = "txlist"
-        params["address"] = walletAddress
-        params["startblock"] = 0
-        params["endblock"] = Int64.max
-        params["apikey"] = self.apiKey
-        params["sort"] = "desc"
-        
-        let page = offset > 0 ? (count / offset) + 1 : 1
-        
-        params["page"] = page
-        params["offset"] = count
-        
-        self.transport.executeRequest(withURL: self.apiURLString, params: params, method: .GET) { (result, error) in
-            
-            guard error == nil else {
-                
-                completition(nil, error)
-                return
-            }
-            
-            var transactions = [EtherscanTransaction]()
-            
-            if let dictionary = result as? [String:Any], let transactionDictionaries = dictionary["result"] as? [[String:Any]] {
-
-                transactionDictionaries.forEach({ (transactionDictionary) in
-                    
-                    if let transaction = EtherscanTransaction.init(transactionDictionary: transactionDictionary) {
-                        transactions.append(transaction)
-                    }
-                })
-            }
-            
-            completition(transactions, nil)
         }
     }
 }

@@ -28,6 +28,22 @@ public class BaseAmount:Amount {
     }
 }
 
+public class CryptoAmount:BaseAmount {
+    
+    public override init(value: Double, symbol: String) {
+        
+        var specialSymbol = symbol
+        
+        switch symbol {
+        case "BTC": specialSymbol = "₿"
+        case "ETH": specialSymbol = "Ξ"
+        default:break
+        }
+        
+        super.init(value: value, symbol: specialSymbol)
+    }
+}
+
 public class FiatAmount:BaseAmount {
     
     private var fiatType:FiatType

@@ -11,6 +11,7 @@ public typealias HTTPTransportCompletition = (Any?, Error?) -> Void
 
 public enum HTTPTransportMethod {
     case GET
+    case POST
 }
 
 public protocol HTTPTransport {

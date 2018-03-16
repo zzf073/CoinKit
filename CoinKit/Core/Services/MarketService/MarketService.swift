@@ -12,5 +12,4 @@ public typealias GetCoinsCompletition = ([CoinSummary]?, Error?) -> Void
 public protocol MarketService {
     
     func getCoins(offset:UInt, count:UInt, completition:@escaping GetCoinsCompletition)
-    
 }
