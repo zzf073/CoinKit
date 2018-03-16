@@ -46,9 +46,18 @@ public class FixerExchangeRateService:ExchangeRateService {
             
             var result = [String:Double]()
             
+            let allFiats = self.rates!.map({ $0.key })
+            
             coinSymbols.forEach({ (symbol) in
                 
-                if let coinPrice = self.coinPrices?[symbol] {
+                let isFiat = allFiats.contains(symbol)
+                
+                if isFiat {
+                    if let currencyRate = self.rates?[symbol], let targetCurrencyRate = self.rates?[targetCurrency.rawValue], currencyRate > 0 {
+                        result[symbol] = targetCurrencyRate / currencyRate
+                    }
+                }
+                else if let coinPrice = self.coinPrices?[symbol] {
                     
                     if let fiatPriceInUSD = self.rates?[targetCurrency.rawValue] {
                         result[symbol] = coinPrice * fiatPriceInUSD
