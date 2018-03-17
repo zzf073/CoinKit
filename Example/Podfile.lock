@@ -20,6 +20,59 @@ PODS:
     - AFNetworking
     - Alamofire
     - Arcane
+    - Cryptex
+  - Cryptex (0.0.4):
+    - Cryptex/All (= 0.0.4)
+    - CryptoSwift
+  - Cryptex/All (0.0.4):
+    - Cryptex/Binance
+    - Cryptex/Bitfinex
+    - Cryptex/BitGrail
+    - Cryptex/CoinExchange
+    - Cryptex/CoinMarketCap
+    - Cryptex/Cryptopia
+    - Cryptex/GDAX
+    - Cryptex/Gemini
+    - Cryptex/Koinex
+    - Cryptex/Kraken
+    - Cryptex/Poloniex
+    - CryptoSwift
+  - Cryptex/Binance (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Bitfinex (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/BitGrail (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/CoinExchange (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/CoinMarketCap (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Common (0.0.4):
+    - CryptoSwift
+  - Cryptex/Cryptopia (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/GDAX (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Gemini (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Koinex (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Kraken (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - Cryptex/Poloniex (0.0.4):
+    - Cryptex/Common
+    - CryptoSwift
+  - CryptoSwift (0.8.3)
 
 DEPENDENCIES:
   - CoinKit (from `../`)
@@ -32,7 +85,9 @@ SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Arcane: 870689a8ba7145a7dec0c2d7d7836b50c9f12636
-  CoinKit: ef52e20f1259fa141479ca51962ac31edb003c8d
+  CoinKit: f04933bf5a5baa5ec835370cece2edfbd5012384
+  Cryptex: 9c6d394497f899694ac36692a4584cf79b540810
+  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
 
 PODFILE CHECKSUM: 38f94637f8e5f0722482d9518603c825b0029798
 
