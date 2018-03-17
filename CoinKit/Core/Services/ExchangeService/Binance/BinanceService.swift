@@ -38,27 +38,30 @@ class BinanceService:ExchangeService {
         
         self.service?.getAccount(completion: { (type) in
             
-            if let code = self.service?.store.accountResponse.response?.statusCode, code == 200 {
+            DispatchQueue.main.async {
                 
-                if let balances = self.service?.store.accountResponse.account?.balances {
+                if let code = self.service?.store.accountResponse.response?.statusCode, code == 200 {
                     
-                    var result = [String:Amount]()
-                    
-                    balances.forEach({ (balance) in
+                    if let balances = self.service?.store.accountResponse.account?.balances {
                         
-                        let symbol = balance.currency.code
+                        var result = [String:Amount]()
                         
-                        result[symbol] = BaseAmount.init(value: balance.locked.adding(balance.quantity).doubleValue, symbol: symbol)
-                    })
-                    
-                    completition(result, nil)
+                        balances.forEach({ (balance) in
+                            
+                            let symbol = balance.currency.code
+                            
+                            result[symbol] = BaseAmount.init(value: balance.locked.adding(balance.quantity).doubleValue, symbol: symbol)
+                        })
+                        
+                        completition(result, nil)
+                    }
+                    else {
+                        completition(nil, ExchangeServiceError.ParsingError.errorObject("Cannot parse balances"))
+                    }
                 }
                 else {
-                    completition(nil, ExchangeServiceError.ParsingError.errorObject("Cannot parse balances"))
+                    completition(nil, ExchangeServiceError.APIError.errorObject("Invalid API keys"))
                 }
-            }
-            else {
-                completition(nil, ExchangeServiceError.APIError.errorObject("Invalid API keys"))
             }
         })
     }
