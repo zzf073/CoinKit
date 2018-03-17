@@ -25,14 +25,17 @@ public class CexService:ExchangeService {
     
     public func getAccountBalance(_ completition: @escaping ([String : Amount]?, Error?) -> Void) {
         
-        
         let operation = BlockOperation.init {
             
             guard let userID = self.authCredentials?.userID,
                 let apiKey = self.authCredentials?.apiKey,
                 let secretKey = self.authCredentials?.secretKey else
             {
-                return completition(nil, ExchangeServiceError.IncompleteCredentials.errorObject("userID, apiKey and secretKey is required"))
+                DispatchQueue.main.async {
+                    completition(nil, ExchangeServiceError.IncompleteCredentials.errorObject("userID, apiKey and secretKey is required"))
+                }
+                
+                return
             }
             
             CexService.nonce += 1
