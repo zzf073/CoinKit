@@ -48,7 +48,11 @@ class BinanceService:ExchangeService {
                         
                         balances.forEach({ (balance) in
                             
-                            let symbol = balance.currency.code
+                            var symbol = balance.currency.code
+                            
+                            if symbol == "BCC" { //Binance, wtf?
+                                symbol = "BCH"
+                            }
                             
                             result[symbol] = BaseAmount.init(value: balance.locked.adding(balance.quantity).doubleValue, symbol: symbol)
                         })
