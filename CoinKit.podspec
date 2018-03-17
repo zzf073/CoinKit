@@ -30,5 +30,4 @@ Pod::Spec.new do |s|
   s.dependency 'AFNetworking'
   s.dependency 'Alamofire'
   s.dependency 'Arcane'
-  s.dependency 'Cryptex'
 end

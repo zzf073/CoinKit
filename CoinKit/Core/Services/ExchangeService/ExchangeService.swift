@@ -10,6 +10,7 @@ import Foundation
 public enum ExchangeServiceError:Int {
     
     case UnknownError
+    case SignError
     case IncompleteCredentials //no api key proved, etc
     case APIError // server responded, but there is some error (eg some params are invalid)
     case ParsingError // server returned response without error, but format is unsupported
